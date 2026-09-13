@@ -1,7 +1,7 @@
 services:
   next_production:
     container_name: next_production
-    image: luuppi.azurecr.io/next-prod:latest
+    image: ${REGISTRY}/next-prod:latest
     restart: unless-stopped
     env_file: .env
     environment:
