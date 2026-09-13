@@ -1,7 +1,7 @@
 services:
   strapi_production:
     container_name: strapi_production
-    image: luuppi.azurecr.io/strapi-prod:latest
+    image: ${REGISTRY}/strapi-prod:latest
     restart: unless-stopped
     env_file: .env
     environment:
