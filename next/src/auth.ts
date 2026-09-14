@@ -69,6 +69,13 @@ export const {
     async jwt({ token, account, user }) {
       if (account && account.provider !== 'credentials') {
         const idToken = account.id_token;
+	console.log('Entra decoded claims:', {
+	  oid: decoded?.oid,
+	  email: decoded?.email,
+	  emails: (decoded as any)?.emails,
+	  preferred_username: (decoded as any)?.preferred_username,
+	  name: (decoded as any)?.name,
+	});
         if (!idToken) return token;
         let decoded: null | { email: string; oid: string } = null;
         try {
