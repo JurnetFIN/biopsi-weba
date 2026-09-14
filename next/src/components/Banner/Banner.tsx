@@ -31,8 +31,8 @@ export default function Banner({ lang }: BannerProps) {
               className="z-20 object-contain p-6 drop-shadow-[-6px_6px_#00000030] filter max-lg:drop-shadow-[-4px_4px_#00000030] max-md:p-4"
               draggable={false}
               src={lang === 'en' ? biopsiBannerTextEn : biopsiBannerTextFi}
-              fill
               preload
+              fill
             />
 
             <Image

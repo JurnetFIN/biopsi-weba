@@ -41,7 +41,7 @@ export default function MobileHamburger({
       link.authenticationLevel === 'authenticated' && session?.user,
     );
     const isBiopsiHato = Boolean(
-      link.authenticationLevel === 'luuppi-hato' && session?.user?.isBiopsiHato,
+      link.authenticationLevel === 'biopsi-hato' && session?.user?.isBiopsiHato,
     );
     const isUnrestricted = !link.authenticationLevel;
 
