@@ -69,22 +69,53 @@ export const {
     async jwt({ token, account, user }) {
       if (account && account.provider !== 'credentials') {
         const idToken = account.id_token;
-	console.log('Entra decoded claims:', {
-	  oid: decoded?.oid,
-	  email: decoded?.email,
-	  emails: (decoded as any)?.emails,
-	  preferred_username: (decoded as any)?.preferred_username,
-	  name: (decoded as any)?.name,
-	});
+
         if (!idToken) return token;
-        let decoded: null | { email: string; oid: string } = null;
+
+        let decoded: null | {
+          email?: string;
+          emails?: string[];
+          preferred_username?: string;
+          name?: string;
+          oid?: string;
+        } = null;
+
         try {
-          decoded = jwt.decode(idToken) as { email: string; oid: string };
+          decoded = jwt.decode(idToken) as {
+            email?: string;
+            emails?: string[];
+            preferred_username?: string;
+            name?: string;
+            oid?: string;
+          } | null;
         } catch (e) {
           logger.error('Error decoding JWT', e);
         }
+
         if (!decoded) return token;
-        token.email = decoded.email;
+
+        console.log('Entra decoded claims:', {
+          oid: decoded.oid,
+          email: decoded.email,
+          emails: decoded.emails,
+          preferred_username: decoded.preferred_username,
+          name: decoded.name,
+        });
+
+        if (!decoded.oid) {
+          throw new Error('Entra ID token is missing oid claim');
+        }
+
+        const email =
+          decoded.email ??
+          decoded.emails?.[0] ??
+          decoded.preferred_username;
+
+        if (!email) {
+          throw new Error('Entra ID token is missing email claim');
+        }
+
+        token.email = email;
         token.id = decoded.oid;
 
         // Update user to local database
