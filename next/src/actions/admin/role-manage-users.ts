@@ -28,7 +28,7 @@ export async function roleAddUser(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {
@@ -54,7 +54,7 @@ export async function roleAddUser(
   const SUPER_ADMINS = process.env.XXX_SUPER_ADMIN_XXX!.split(',');
   const illegalRoles = SUPER_ADMINS.includes(user.entraUserUuid)
     ? []
-    : [process.env.NEXT_PUBLIC_LUUPPI_HATO_ID];
+    : [process.env.NEXT_PUBLIC_BIOPSI_HATO_ID];
 
   if (illegalRoles.includes(roleId)) {
     logger.error('Attempt to add to a protected role');
@@ -143,7 +143,7 @@ export async function roleRemoveUser(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {
@@ -170,8 +170,8 @@ export async function roleRemoveUser(
   const illegalRoles = SUPER_ADMINS.includes(user.entraUserUuid)
     ? []
     : [
-        process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
-        process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+        process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
+        process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
         process.env.NEXT_PUBLIC_NO_ROLE_ID!,
       ];
 

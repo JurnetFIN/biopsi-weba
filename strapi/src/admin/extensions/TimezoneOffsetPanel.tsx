@@ -43,7 +43,7 @@ const TimezoneOffsetPanel = ({ model }: { model: string }) => {
 
   const hours = Math.round(diffMinutes / 60);
   const sign = hours > 0 ? "+" : "";
-  const label = `Helsinki is ${sign}${hours}h relative to your local time (${userTz}), luuppi.fi uses Finnish time.`;
+  const label = `Helsinki is ${sign}${hours}h relative to your local time (${userTz}), biopsi.fi uses Finnish time.`;
 
   return {
     title: "WRONG TIMEZONE ‼️",

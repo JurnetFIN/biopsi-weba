@@ -4,8 +4,8 @@ import 'next-auth/jwt';
 declare module 'next-auth' {
   interface User {
     entraUserUuid: string;
-    isLuuppiHato: boolean;
-    isLuuppiMember: boolean;
+    isBiopsiHato: boolean;
+    isBiopsiMember: boolean;
     username: string;
     tokenVersion: number;
   }

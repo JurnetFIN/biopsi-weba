@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     const roleToGive = strapiEvent?.Registration?.RoleToGive?.RoleId;
 
     const illegalRoles = [
-      process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       process.env.NEXT_PUBLIC_NO_ROLE_ID!,
     ];
 

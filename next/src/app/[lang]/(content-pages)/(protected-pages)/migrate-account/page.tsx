@@ -20,7 +20,7 @@ export default async function MigrateAccount(props: MigrateAccountProps) {
     redirect(`/${params.lang}`);
   }
 
-  if (session.user.isLuuppiMember) {
+  if (session.user.isBiopsiMember) {
     logger.info('User is already a Luuppi member');
     redirect(`/${params.lang}/profile`);
   }

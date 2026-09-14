@@ -14,9 +14,9 @@ import {
 import { ReactEditor, useFocused, useSelected } from "slate-react";
 import { styled } from "styled-components";
 import Callout from "./components/Callout";
+import { Hr, HR_MARKER, withHr } from "./components/Hr";
 import { makeSafetyNotice } from "./components/SafetyNotice";
 import { pressEnterTwiceToExit } from "./utils/enter-key";
-import { withHr, Hr, HR_MARKER } from "./components/Hr";
 
 const Blockquote = styled.blockquote.attrs({ role: "blockquote" })`
   font-weight: ${({ theme }) => theme.fontWeights.regular};
@@ -76,7 +76,7 @@ export default {
             </div>
           ),
         icon: Quotes,
-        label: { id: "luuppi-blocks.blocks.quote", defaultMessage: "Quote" },
+        label: { id: "biopsi-blocks.blocks.quote", defaultMessage: "Quote" },
         matchNode: (node) =>
           SlateElement.isElement(node) && node.type === "quote",
         isInBlocksSelector: true,
@@ -101,7 +101,7 @@ export default {
         ),
         icon: Information,
         label: {
-          id: "luuppi-blocks.blocks.callout",
+          id: "biopsi-blocks.blocks.callout",
           defaultMessage: "Callout",
         },
         matchNode: (node) =>
@@ -128,7 +128,7 @@ export default {
       hr: {
         icon: Minus,
         renderElement: (props) => <HrElement {...props} />,
-        label: { id: "luuppi-blocks.blocks.hr", defaultMessage: "Divider" },
+        label: { id: "biopsi-blocks.blocks.hr", defaultMessage: "Divider" },
         matchNode: (node) =>
           SlateElement.isElement(node) &&
           node.type === "paragraph" &&

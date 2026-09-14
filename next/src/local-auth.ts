@@ -8,8 +8,8 @@ const DEV_USERS = Object.freeze([
   {
     entraUserUuid: 'dev-uuid-member',
     id: 'dev-uuid-member',
-    isLuuppiHato: false,
-    isLuuppiMember: true,
+    isBiopsiHato: false,
+    isBiopsiMember: true,
     tokenVersion: Number.parseInt(process.env.TOKEN_VERSION || '1'),
     username: 'Dev member',
     email: 'member@dev.local',
@@ -17,8 +17,8 @@ const DEV_USERS = Object.freeze([
   {
     entraUserUuid: 'dev-uuid-hato',
     id: 'dev-uuid-hato',
-    isLuuppiHato: true,
-    isLuuppiMember: true,
+    isBiopsiHato: true,
+    isBiopsiMember: true,
     tokenVersion: Number.parseInt(process.env.TOKEN_VERSION || '1'),
     username: 'Dev hato',
     email: 'hato@dev.local',
@@ -27,8 +27,8 @@ const DEV_USERS = Object.freeze([
   {
     entraUserUuid: 'dev-uuid-default',
     id: 'dev-uuid-default',
-    isLuuppiHato: false,
-    isLuuppiMember: false,
+    isBiopsiHato: false,
+    isBiopsiMember: false,
     tokenVersion: Number.parseInt(process.env.TOKEN_VERSION || '1'),
     username: 'Dev default',
     email: 'default@dev.local',
@@ -70,8 +70,8 @@ export const createDevOnlyJWT = async ({ user, token }: DevOnlyJwtOptions) => {
 
   const roleUuids = [
     process.env.NEXT_PUBLIC_NO_ROLE_ID!,
-    devUser.isLuuppiMember ? process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID! : null,
-    devUser.isLuuppiHato ? process.env.NEXT_PUBLIC_LUUPPI_HATO_ID! : null,
+    devUser.isBiopsiMember ? process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID! : null,
+    devUser.isBiopsiHato ? process.env.NEXT_PUBLIC_BIOPSI_HATO_ID! : null,
   ].filter(Boolean) as string[];
 
   const localUser = await prisma.user.upsert({
@@ -135,8 +135,8 @@ export const createDevOnlyJWT = async ({ user, token }: DevOnlyJwtOptions) => {
   const hasRole = (roleUuid: string) =>
     localUser.roles.some((r) => r.role.strapiRoleUuid === roleUuid);
 
-  token.isLuuppiHato = hasRole(process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!);
-  token.isLuuppiMember = hasRole(process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!);
+  token.isBiopsiHato = hasRole(process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!);
+  token.isBiopsiMember = hasRole(process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!);
   token.username = localUser.username ?? devUser.username;
   token.version = process.env.TOKEN_VERSION;
   token.devOnly = true;

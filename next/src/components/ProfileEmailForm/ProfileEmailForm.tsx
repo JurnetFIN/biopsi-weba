@@ -57,7 +57,7 @@ export default function ProfileEmailform({
         error={formResponse.field === 'email' ? formResponse.message : ''}
         id="email"
         marginTop={false}
-        placeholder="webmaster@luuppi.fi"
+        placeholder="webmaster@biopsi.fi"
         title={dictionary.general.email}
         type="email"
         value={user.email}

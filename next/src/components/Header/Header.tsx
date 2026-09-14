@@ -2,14 +2,14 @@ import { navLinksDesktop } from '@/libs/constants';
 import { Dictionary, SupportedLanguage } from '@/models/locale';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { BsGlobe } from 'react-icons/bs';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import luuppiSvg from '../../../public/luuppi.svg';
+import biopsiSvg from '../../../public/biopsi.svg';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import HeaderActions from './HeaderActions/HeaderActions';
 import HideableLink from './HideableLinks/HideableLink';
 import ScrollListener from './ScrollListener/ScrollListener';
-import { Suspense } from 'react';
-import { BsGlobe } from 'react-icons/bs';
 
 interface HeaderProps {
   dictionary: Dictionary;
@@ -38,12 +38,12 @@ export default function Header({ dictionary, lang }: HeaderProps) {
               href={`/${lang}`}
             >
               <Image
-                alt="Luuppi logo"
+                alt="Biopsi logo"
                 className={'object-contain'}
                 draggable={false}
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={luuppiSvg}
+                src={biopsiSvg}
                 fill
               />
             </Link>

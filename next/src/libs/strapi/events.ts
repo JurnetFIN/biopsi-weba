@@ -4,7 +4,7 @@ import { logger } from '@/libs/utils/logger';
 import { Dictionary } from '@/models/locale';
 import { APIResponseData } from '@/types/types';
 
-const luuppiMember = process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!;
+const luuppiMember = process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!;
 const luuppiNonMember = process.env.NEXT_PUBLIC_NO_ROLE_ID!;
 
 type Event = Omit<APIResponseData<'api::event.event'>, 'id'>;
@@ -160,7 +160,7 @@ export const filterVisibleEvents = async (
 ): Promise<Event[]> => {
   const roles = [
     process.env.NEXT_PUBLIC_NO_ROLE_ID!,
-    process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+    process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
   ];
 
   const visibilityChecks = await Promise.all(

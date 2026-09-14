@@ -24,17 +24,17 @@ export function register() {
         message:
           'NEXT_PUBLIC_NO_ROLE_ID must be lowercase characters, numbers and -',
       },
-      NEXT_PUBLIC_LUUPPI_MEMBER_ID: {
+      NEXT_PUBLIC_BIOPSI_MEMBER_ID: {
         // Only lowercase chars (with äö), numbers and - allowed
         regex: /^[a-z0-9äö-]+$/,
         message:
-          'NEXT_PUBLIC_LUUPPI_MEMBER_ID must be lowercase characters, numbers and -',
+          'NEXT_PUBLIC_BIOPSI_MEMBER_ID must be lowercase characters, numbers and -',
       },
-      NEXT_PUBLIC_LUUPPI_HATO_ID: {
+      NEXT_PUBLIC_BIOPSI_HATO_ID: {
         // Only lowercase chars (with äö), numbers and - allowed
         regex: /^[a-z0-9äö-]+$/,
         message:
-          'NEXT_PUBLIC_LUUPPI_HATO_ID must be lowercase characters, numbers and -',
+          'NEXT_PUBLIC_BIOPSI_HATO_ID must be lowercase characters, numbers and -',
       },
       AZURE_TENANT_NAME: {
         // Only alphanumeric characters and -

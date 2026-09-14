@@ -1,4 +1,4 @@
-type AuthenticationLevel = 'authenticated' | 'luuppi-hato' | 'luuppi-member';
+type AuthenticationLevel = 'authenticated' | 'biopsi-hato' | 'biopsi-member';
 
 export interface NavLink {
   translation: string;
@@ -181,7 +181,7 @@ export const navLinksMobile: NavLink[] = [
   {
     translation: 'admin',
     href: '/admin?mode=event',
-    authenticationLevel: 'luuppi-hato',
+    authenticationLevel: 'biopsi-hato',
   },
   {
     translation: 'sports',

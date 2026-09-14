@@ -14,37 +14,32 @@ export const getOrganizationJsonLd = (dictionary: Dictionary) => {
   const jsonLd: WithContext<EducationalOrganization> = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Luuppi ry',
+    name: 'Biopsi ry',
     description: dictionary.pages_home.hero.description,
     openingHours: 'Mo,Tu,We,Th 09:00-15:00',
-    foundingDate: '1969-01-01',
-    url: 'https://luuppi.fi',
-    keywords: 'Luuppi, Luuppi ry, Tampere, Tampereen yliopisto, Ainejärjestö',
-    logo: 'https://luuppi.fi/logo.png',
+    foundingDate: '2001-01-01',
+    url: 'https://biopsi.fi',
+    keywords: 'Biopsi, Biopsi ry, Tampere, Tampereen yliopisto, Ainejärjestö',
+    logo: 'https://biopsi.fi/logo.png',
     address: {
       '@type': 'PostalAddress',
-      postalCode: '33100',
-      streetAddress: 'Yliopistonkatu 58b',
+      postalCode: '33520',
+      streetAddress: 'Arvo Ylpön katu 34, huone F108',
       addressCountry: 'FI',
       addressLocality: 'Tampere',
     },
-    vatID: 'FI05123472',
+    vatID: 'FI21011761',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: dictionary.navigation.board,
-      email: 'hallitus@luuppi.fi',
+      email: 'hallitus@biopsi.fi',
       availableLanguage: ['Finnish', 'English'],
     },
     sameAs: [
-      'https://www.facebook.com/luuppiry',
-      'https://www.tiktok.com/@luuppiry',
-      'https://www.instagram.com/luuppiry/',
-      'https://www.linkedin.com/company/luuppi-ry',
-      'https://fi.wikipedia.org/wiki/Luuppi_(ainej%C3%A4rjest%C3%B6)',
-      'https://www.linkedin.com/company/luuppi-ry',
-    ],
-    hasMap:
-      'https://www.google.com/maps/d/viewer?mid=1udxC-9jUfnpF5-bZyxiT3SlEcPMRnAh9',
+      'https://www.facebook.com/biopsiuta',
+      'https://www.tiktok.com/@biopsiry',
+      'https://www.instagram.com/biopsiry/'
+    ]
   };
 
   return jsonLd;
@@ -67,7 +62,7 @@ export const getEventJsonLd = (
     '@context': 'https://schema.org',
     '@type': 'Event',
     name: event.data[lang === 'en' ? 'NameEn' : 'NameFi'],
-    url: `https://luuppi.fi/${lang}/events/${event.data.Slug}`,
+    url: `https://biopsi.fi/${lang}/events/${event.data.Slug}`,
     startDate: new Date(event.data.StartDate).toISOString(),
     endDate: new Date(event.data.EndDate).toISOString(),
     description: description.slice(0, 300),
@@ -83,21 +78,21 @@ export const getEventJsonLd = (
       name: lang === 'en' ? ticket.NameEn : ticket.NameFi,
       price: ticket.Price,
       priceCurrency: 'EUR',
-      url: `https://luuppi.fi/${lang}/events/${event.data.Slug}`,
+      url: `https://biopsi.fi/${lang}/events/${event.data.Slug}`,
       validFrom: new Date(event.data.StartDate).toISOString(),
       seller: {
         '@type': 'Organization',
-        name: 'Luuppi ry',
-        url: 'https://luuppi.fi',
+        name: 'Biopsi ry',
+        url: 'https://biopsi.fi',
       },
     })),
     organizer: {
       '@type': 'Organization',
-      name: 'Luuppi ry',
-      url: 'https://luuppi.fi',
+      name: 'Biopsi ry',
+      url: 'https://biopsi.fi',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://luuppi.fi/logo.png',
+        url: 'https://biopsi.fi/logo.png',
       },
     },
     inLanguage: {
@@ -124,10 +119,10 @@ export const getNewsJsonLd = (
     dateModified: new Date(news.updatedAt!).toISOString(),
     publisher: {
       '@type': 'Organization',
-      name: 'Luuppi ry',
+      name: 'Biopsi ry',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://luuppi.fi/logo.png',
+        url: 'https://biopsi.fi/logo.png',
       },
     },
     author: {
@@ -159,8 +154,8 @@ export const getBoardMemberJsonLd = (
     jobTitle: member.boardRoles!.map((role) => role.title!),
     worksFor: {
       '@type': 'Organization',
-      name: 'Luuppi ry',
-      url: 'https://luuppi.fi',
+      name: 'Biopsi ry',
+      url: 'https://biopsi.fi',
     },
   };
 

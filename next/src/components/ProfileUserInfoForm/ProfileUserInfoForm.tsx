@@ -25,14 +25,14 @@ interface ProfileUserInfoFormProps {
   user: User;
   lang: SupportedLanguage;
   dictionary: Dictionary;
-  isLuuppiMember: boolean;
+  isBiopsiMember: boolean;
 }
 
 export default function ProfileUserInfoForm({
   user,
   lang,
   dictionary,
-  isLuuppiMember,
+  isBiopsiMember,
 }: ProfileUserInfoFormProps) {
   const [formResponse, setFormResponse] = useState(initialState);
 
@@ -42,7 +42,7 @@ export default function ProfileUserInfoForm({
   };
 
   const hasMissingInformation =
-    isLuuppiMember &&
+    isBiopsiMember &&
     (!user.firstName || !user.lastName || !user.domicle || !user.major);
 
   return (
@@ -105,7 +105,7 @@ export default function ProfileUserInfoForm({
         }
         marginTop={false}
         placeholder={dictionary.general.firstNames}
-        required={isLuuppiMember}
+        required={isBiopsiMember}
         title={dictionary.general.firstNames}
         type="text"
         value={user.firstName ?? ''}
@@ -124,7 +124,7 @@ export default function ProfileUserInfoForm({
         }
         marginTop={false}
         placeholder={dictionary.general.lastName}
-        required={isLuuppiMember}
+        required={isBiopsiMember}
         title={dictionary.general.lastName}
         type="text"
         value={user.lastName ?? ''}
@@ -164,7 +164,7 @@ export default function ProfileUserInfoForm({
         }
         marginTop={false}
         placeholder={dictionary.general.domicle}
-        required={isLuuppiMember}
+        required={isBiopsiMember}
         title={dictionary.general.domicle}
         type="text"
         value={user.domicle ?? ''}

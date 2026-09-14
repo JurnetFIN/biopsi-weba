@@ -40,7 +40,7 @@ export const formatMetadata = (
   }
 
   return {
-    title: `${seo.metaTitle} | Luuppi ry`,
+    title: `${seo.metaTitle} | Biopsi ry`,
     description: seo.metaDescription,
     authors: {
       name: seo.metaAuthor,
@@ -58,7 +58,7 @@ export const formatMetadata = (
       description: seo.openGraph.openGraphDescription,
       url: pathname,
       images: openGraphImage ? [openGraphImage] : undefined,
-      siteName: 'Luuppi ry',
+      siteName: 'Biopsi ry',
     },
     twitter: {
       title: seo.twitter.twitterTitle,

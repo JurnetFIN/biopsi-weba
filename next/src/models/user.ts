@@ -4,8 +4,6 @@ export interface ExtendedUser extends User {
   extension_3c0a9d6308d649589e6b4e1f57006bcc_Domicle?: string;
   extension_3c0a9d6308d649589e6b4e1f57006bcc_PreferredFullName?: string;
   extension_3c0a9d6308d649589e6b4e1f57006bcc_Major?:
-    | 'computer_science'
-    | 'mathematics'
-    | 'statistical_data_analysis'
+    | 'biotechnology'
     | 'other';
 }

@@ -69,8 +69,8 @@ export async function addressDeclaration(
   const targetYear = getDeclarationYear();
   const roles = localUser?.roles.map((role) => role.role.strapiRoleUuid) ?? [];
 
-  const isLuuppiMember = roles.includes(
-    process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+  const isBiopsiMember = roles.includes(
+    process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
   );
 
   const fields: Record<
@@ -80,7 +80,7 @@ export async function addressDeclaration(
     domicle: {
       value: formData.get('domicle'),
       regex: /^.{2,35}$/,
-      required: isLuuppiMember,
+      required: isBiopsiMember,
     },
   };
 
@@ -107,7 +107,7 @@ export async function addressDeclaration(
     ]),
   );
 
-  if (fieldsToUpdate.domicle && !isLuuppiMember) {
+  if (fieldsToUpdate.domicle && !isBiopsiMember) {
     logger.error(
       'Tried to update address declaration domicle without being a member of Luuppi',
     );
@@ -117,7 +117,7 @@ export async function addressDeclaration(
     };
   }
 
-  if (formData.get('declaration') === 'on' && isLuuppiMember) {
+  if (formData.get('declaration') === 'on' && isBiopsiMember) {
     await prisma.addressDeclaration.upsert({
       where: {
         entraUserUuid_year: {

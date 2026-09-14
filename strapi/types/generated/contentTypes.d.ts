@@ -1030,7 +1030,7 @@ export interface ApiJobOpportunityJobOpportunity
         };
       }>;
     jobOpportunityTargetGroup: Schema.Attribute.Enumeration<
-      ['everybody', 'computer_science', 'mathematics', 'data_analysis']
+      ['everybody', 'biotechnology']
     > &
       Schema.Attribute.Required;
     jobOpportunityUrl: Schema.Attribute.String &

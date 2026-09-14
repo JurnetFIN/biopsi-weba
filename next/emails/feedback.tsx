@@ -32,7 +32,7 @@ export const LuuppiFeedback = ({
         <Img
           alt="Luuppi"
           height="80"
-          src={'https://luuppi.fi/logo.png'}
+          src={'https://biopsi.fi/logo.png'}
           style={logo}
           width="160"
         />

@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "email": "webmaster@luuppi.fi",
-    "name": "Luuppi ry"
+    "email": "webmaster@biopsi.fi",
+    "name": "Biopsi ry"
   },
   "license": "MIT",
-  "description": "Luuppi's core website built with Next.js",
-  "homepage": "https://luuppi.fi",
+  "description": "Biopsi's core website built with Next.js",
+  "homepage": "https://biopsi.fi",
   "scripts": {
     "dev": "prisma generate && next dev --turbopack",
     "build": "prisma generate && next build",

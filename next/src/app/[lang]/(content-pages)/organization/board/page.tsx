@@ -171,7 +171,7 @@ export async function generateMetadata(props: BoardProps): Promise<Metadata> {
   const pathname = `/${params.lang}/organization/board`;
 
   return {
-    title: `${dictionary.navigation.board} ${latestBoard.year} | Luuppi ry`,
+    title: `${dictionary.navigation.board} ${latestBoard.year} | Biopsi ry`,
     description: `${dictionary.pages_board.seo_description} ${latestBoard.year}`,
     alternates: {
       canonical: pathname,

@@ -57,14 +57,14 @@ export default async function Page(props: {
   const session = await auth();
   const dictionary = await getDictionary(lang);
 
-  if (!session?.user?.isLuuppiHato || !session?.user?.entraUserUuid) {
+  if (!session?.user?.isBiopsiHato || !session?.user?.entraUserUuid) {
     redirect(`/${lang}`);
   }
 
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: session.user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [{ expiresAt: { gte: new Date() } }, { expiresAt: null }],
     },
   });
@@ -155,7 +155,7 @@ export default async function Page(props: {
       .filter(
         (role) =>
           SUPER_ADMINS.includes(session.user!.entraUserUuid) ||
-          (role.strapiRoleUuid !== process.env.NEXT_PUBLIC_LUUPPI_HATO_ID &&
+          (role.strapiRoleUuid !== process.env.NEXT_PUBLIC_BIOPSI_HATO_ID &&
             role.strapiRoleUuid !== process.env.NEXT_PUBLIC_NO_ROLE_ID),
       )
       .map((role) => ({
@@ -176,7 +176,7 @@ export default async function Page(props: {
     .filter(
       (role) =>
         SUPER_ADMINS.includes(session.user?.entraUserUuid ?? '') ||
-        (role.strapiRoleUuid !== process.env.NEXT_PUBLIC_LUUPPI_HATO_ID &&
+        (role.strapiRoleUuid !== process.env.NEXT_PUBLIC_BIOPSI_HATO_ID &&
           role.strapiRoleUuid !== process.env.NEXT_PUBLIC_NO_ROLE_ID),
     )
     .map((role) => role.strapiRoleUuid);

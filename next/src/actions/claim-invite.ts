@@ -1,13 +1,13 @@
 'use server';
 
 import { auth } from '@/auth';
+import { getDictionary } from '@/dictionaries';
+import prisma from '@/libs/db/prisma';
 import { isRateLimited, updateRateLimitCounter } from '@/libs/rate-limiter';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
 import { logger } from '@/libs/utils/logger';
 import { APIResponseCollection } from '@/types/types';
-import prisma from '@/libs/db/prisma';
 import { redirect } from 'next/navigation';
-import { getDictionary } from '@/dictionaries';
 
 const options = { cacheKey: 'invite' };
 
@@ -50,8 +50,8 @@ export async function claimInvite(id: string, lang: string) {
   if (
     [
       process.env.NEXT_PUBLIC_NO_ROLE_ID!,
-      process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
-      process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
+      process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
     ].includes(role)
   ) {
     logger.error(`Trying to add restricted role via invite ${invite.id}`);

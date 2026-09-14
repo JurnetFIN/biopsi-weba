@@ -1,7 +1,7 @@
 services:
   next_development:
     container_name: next_development
-    image: luuppi.azurecr.io/next-dev:latest
+    image: biopsiweb.azurecr.io/next-dev:latest
     restart: unless-stopped
     env_file: .env
     environment:

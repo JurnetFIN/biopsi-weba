@@ -38,7 +38,7 @@ export const LuuppiEventReceipt = ({
         <Img
           alt="Luuppi"
           height="80"
-          src={'https://luuppi.fi/logo.png'}
+          src={'https://biopsi.fi/logo.png'}
           style={logo}
           width="160"
         />
@@ -93,11 +93,11 @@ export const LuuppiEventReceipt = ({
         <Text style={paragraph}>
           Terveisin,
           <br />
-          Luuppi ry - WWW/IT-tiimi
+          Biopsi ry - WWW/IT-tiimi
         </Text>
         <Hr style={hr} />
-        <Text style={footer}>Luuppi ry, Yliopistonkatu 58b, 33100 Tampere</Text>
-        <Text style={footer}>Y-tunnus: 0512347-2</Text>
+        <Text style={footer}>Biopsi ry, Arvo Ylpön katu 34F108, 33520 Tampere</Text>
+        <Text style={footer}>Y-tunnus: 2101176-1</Text>
       </Container>
     </Body>
   </Html>

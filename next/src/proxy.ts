@@ -1,9 +1,9 @@
 import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
+import { draftMode, headers } from 'next/headers';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { i18n } from './i18n-config';
-import { draftMode, headers } from 'next/headers';
 
 function getLocale(request: NextRequest): string | undefined {
   // Use cookie if it exists and is valid
@@ -56,19 +56,18 @@ export async function proxy(request: NextRequest) {
       '/images/new_students.jpg',
       '/images/organization.jpg',
       '/images/event_placeholder.png',
-      '/banner.png',
-      '/banner_mobile.png',
+      '/biopsi_helix.mp4',
       '/partners_pattern.svg',
       '/robo_404.svg',
       '/robo.500.svg',
       '/binary.svg',
       '/ccchaos.svg',
       '/blob.svg',
-      '/luuppi_banner_text_fi.svg',
-      '/luuppi_banner_text_en.svg',
+      '/biopsi_banner_text_fi.svg',
+      '/biopsi_banner_text_en.svg',
       '/kolmiot.svg',
       '/luuppi-cards.svg',
-      '/luuppi.svg',
+      '/biopsi.svg',
     ].includes(pathname)
   ) {
     return NextResponse.next();

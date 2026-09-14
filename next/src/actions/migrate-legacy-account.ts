@@ -9,7 +9,7 @@ import { revalidatePath, updateTag } from 'next/cache';
 
 const options = {
   cacheKey: 'migrate-legacy-account',
-  memberRole: process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+  memberRole: process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
 };
 
 export async function migrateLegacyAccount(

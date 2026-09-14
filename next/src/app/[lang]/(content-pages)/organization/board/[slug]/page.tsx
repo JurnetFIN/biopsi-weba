@@ -185,7 +185,7 @@ export async function generateMetadata(
   const pathname = `/${params.lang}/organization/board/${params.slug}`;
 
   return {
-    title: `${dictionary.navigation.board} ${wantedBoard.year} | Luuppi ry`,
+    title: `${dictionary.navigation.board} ${wantedBoard.year} | Biopsi ry`,
     description: `${dictionary.pages_board.seo_description} ${wantedBoard.year}`,
     alternates: {
       canonical: pathname,
@@ -198,7 +198,7 @@ export async function generateMetadata(
       title: `${dictionary.navigation.board} ${wantedBoard.year}`,
       description: `${dictionary.pages_board.seo_description} ${wantedBoard.year}`,
       url: pathname,
-      siteName: 'Luuppi ry',
+      siteName: 'Biopsi ry',
     },
     twitter: {
       title: `${dictionary.navigation.board} ${wantedBoard.year}`,

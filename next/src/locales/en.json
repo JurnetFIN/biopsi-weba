@@ -40,7 +40,7 @@
     "invalid_answer": "Invalid answer",
     "email_registration_confirmation_subject": "Confirmation of event registration",
     "invalid_credentials": "Invalid credentials",
-    "legacy_account_migrated": "Your old Luuppi account has been linked to your new account, and you now have a member role!",
+    "legacy_account_migrated": "Your old Biopsi account has been linked to your new account, and you now have a member role!",
     "invalid_answer_time": "You cannot change your answers any more. If you need to make changes, please contact the event organizer.",
     "user_not_found": "User not found",
     "user_updated": "User updated. Some changes require the user to re-login to take effect.",
@@ -77,7 +77,7 @@
     "premises_representative": "Premises representative",
     "social_policy_representative": "Social Policy representative",
     "equality_representative": "Equality representative",
-    "editor_in_chief_of_luuppisanomat": "Editor-in-Chief of Luuppisanomat",
+    "editor_in_chief_of_luuppisanomat": "Editor-in-Chief of Biopsisanomat",
     "secretary": "Secretary"
   },
   "general": {
@@ -180,7 +180,7 @@
     "dark": "Dark"
   },
   "mail_list": {
-    "loop": "LOOP: Events, partner announcements, and academic matters related to Luuppi",
+    "loop": "LOOP: Events, partner announcements, and academic matters related to Biopsi",
     "subscribed": "You've been added to the LOOP mail list",
     "unsubscribed": "You've been removed from the LOOP mail list"
   },
@@ -240,16 +240,14 @@
   },
   "pages_home": {
     "hero": {
-      "computer_science": "Computer Science",
-      "mathematics": "Mathematics",
-      "data_analysis": "Data Analysis",
-      "title_1": "Luuppi ry, home for",
-      "title_2": "students since 1969.",
-      "description": "Luuppi ry is the student organization for mathematics, statistical data analysis, and computer science students at the University of Tampere. Since 1969, Luuppi has been actively advocating for its members' interests and organizing leisure activities. It boasts the largest membership among student organizations at the University of Tampere!",
+      "biotechnology": "Biotechnology",
+      "title_1": "Biopsi ry, home for",
+      "title_2": "students since 2001.",
+      "description": "Biopsi ry is the student organization for biotechnology students at the University of Tampere. Since 2001, Biopsi has been actively advocating for its members' interests and organizing leisure activities. It boasts the largest membership among student organizations at the University of Tampere!",
       "read_more": "Read more"
     },
     "discover": {
-      "title": "Discover Luuppi",
+      "title": "Discover Biopsi",
       "organization": "Organization",
       "events": "Events",
       "new_students": "New students",
@@ -275,16 +273,16 @@
     },
     "telegram": {
       "title": "Join our Telegram",
-      "description": "In the academic world, Telegram is a widely used communication channel, and Luupi has its own groups! Join us to stay updated on events and other current affairs.",
+      "description": "In the academic world, Telegram is a widely used communication channel, and Biopsi has its own groups! Join us to stay updated on events and other current affairs.",
       "groups": "Groups",
       "new_students": "2026 new students group",
-      "information_channel": "Luuppi bulletin (fi/en)",
+      "information_channel": "Biopsi bulletin (fi/en)",
       "general_chat": "General chat (fi/en)",
-      "study_group_cs": "Luuppi's Study Group (Computer Science)",
-      "study_group_math": "Luuppi's Study Group (Mathematics)",
-      "flea_market": "Luuppi's flea market",
-      "kyykkä_group": "Luuppi's Kyykkä group",
-      "alumni_group": "Luuppi's Alumni's group",
+      "study_group_cs": "Biopsi's Study Group (Computer Science)",
+      "study_group_math": "Biopsi's Study Group (Mathematics)",
+      "flea_market": "Biopsi's flea market",
+      "kyykkä_group": "Biopsi's Kyykkä group",
+      "alumni_group": "Biopsi's Alumni's group",
       "new_student_group": "Are you a first-year student? First-year students also have their own group annually, which you should definitely join! The updated link to the first-year student group can be found on the first-year student page at the beginning of the academic year!"
     }
   },
@@ -292,19 +290,19 @@
     "other_boards": "Other boards",
     "board_members": "Board members",
     "officials": "Officials",
-    "seo_description": "Luuppi ry's Board and Officials in"
+    "seo_description": "Biopsi ry's Board and Officials in"
   },
   "pages_meeting_minutes_year": {
     "other_meeting_minutes_years": "Other years",
     "meeting_minutes_documents": "Meeting minutes documents",
-    "seo_description": "Luuppi ry's Meeting Minutes in",
-    "unauthorized": "This page can be viewed only by Luuppi members. Log in as a member of Luuppi ry."
+    "seo_description": "Biopsi ry's Meeting Minutes in",
+    "unauthorized": "This page can be viewed only by Biopsi members. Log in as a member of Biopsi ry."
   },
   "pages_songbook": {
     "title": "Songbook",
-    "description": "Congratulations! You've got your hands on the third edition of the songbook Vergilia Dramatica by Luuppi ry. Carry the book with you like your own child at parties, even tucked in the pocket of your overalls. The roots of this songbook trace back to 2012 when the first version of Vergilia Dramatica was created in the form of a song pamphlet for Luuppi's 'Police and Thieves' sitz.",
-    "seo_title": "Luuppi ry | Songbook",
-    "seo_description": "Songs from the third edition of Luuppi ry's songbook Vergilia Dramatica."
+    "description": "Congratulations! You've got your hands on the third edition of the songbook Vergilia Dramatica by Biopsi ry. Carry the book with you like your own child at parties, even tucked in the pocket of your overalls. The roots of this songbook trace back to 2012 when the first version of Vergilia Dramatica was created in the form of a song pamphlet for Biopsi's 'Police and Thieves' sitz.",
+    "seo_title": "Biopsi ry | Songbook",
+    "seo_description": "Songs from the third edition of Biopsi ry's songbook Vergilia Dramatica."
   },
   "pages_events": {
     "calendar": "Calendar",
@@ -346,7 +344,7 @@
     "redeem_ticket": "Redeem ticket",
     "payment_completed": "Payment completed",
     "payment_failed": "Payment failed",
-    "payment_failed_description": "Your payment has failed. If you got charged, please contact WWW/IT representatives at webmaster@luuppi.fi",
+    "payment_failed_description": "Your payment has failed. If you got charged, please contact WWW/IT representatives at webmaster@biopsi.fi",
     "payment_completed_description": "Your payment has been successfully completed. You will receive a receipt via email shortly, and you can now close this page. You can view your transactions on the 'Own events' page, where you can also edit any additional information for the event if editing is permitted.",
     "fill_additional_info": "Fill details",
     "edit_additional_info": "Edit details",
@@ -368,15 +366,15 @@
     "title": "Page not found",
     "description": "Ooops.... The page you are looking for does not exist. Please check the URL and try again.",
     "return_home": "Back to home",
-    "seo_title": "Luuppi ry | Page not found",
+    "seo_title": "Biopsi ry | Page not found",
     "seo_description": "The page you are looking for does not exist. Page might have been removed or the URL is incorrect."
   },
   "seo": {
-    "title": "Luuppi ry | Subject association for mathematics, statistical data analysis, and computer science students at the University of Tampere",
-    "description": "Luuppi ry is the subject association for mathematics, statistical data analysis, and computer science students at the University of Tampere. Luuppi has actively represented the interests of its members and organized recreational activities since 1969. With its membership, Luuppi is the largest subject association at the University of Tampere!"
+    "title": "Biopsi ry | Subject association for biotechnology students at the University of Tampere",
+    "description": "Biopsi ry is the subject association for biotechnology students at the University of Tampere. Biopsi has actively represented the interests of its members and organized recreational activities since 2001. With its membership, Biopsi is the largest subject association at the University of Tampere!"
   },
   "footer": {
-    "description": "Luuppi ry is the student organization for computer science, mathematics, and statistical data analysis at the University of Tampere."
+    "description": "Biopsi ry is the student organization for computer science, mathematics, and statistical data analysis at the University of Tampere."
   },
   "pages_companies": {
     "founded": "Founded",
@@ -387,9 +385,7 @@
     "job_opportunity_ending": "Ending",
     "job_opportunity_target_group": "Target group",
     "everybody": "Everybody",
-    "computer_science": "Computer science",
-    "mathematics": "Mathematics",
-    "data_analysis": "Data Analysis"
+    "biotechnology": "Biotechnology"
   },
   "pages_verify_email": {
     "new_email": "New email",
@@ -408,7 +404,7 @@
     "registration_info": "Registration info",
     "user_management": "User management",
     "event_management": "Event management",
-    "user_required_info_missing": "User is Luuppi's member but is missing required information!",
+    "user_required_info_missing": "User is Biopsi's member but is missing required information!",
     "user_management_description": "View and manage all users in the system. Use search to filter by email, username, or name.",
     "picked_up": "Picked up",
     "mark_picked_up": "Mark as picked up",
@@ -428,8 +424,8 @@
     "search_users_to_add": "Search for users to add",
     "role_user_count": "users",
     "active_users": "Active users",
-    "sanomats_tool": "LuuppiSanomat PDF tool",
-    "sanomats_tool_description": "Processes a traditional PDF for use in LuuppiSanomats: cover, content (2 per page), and back cover.",
+    "sanomats_tool": "BiopsiSanomat PDF tool",
+    "sanomats_tool_description": "Processes a traditional PDF for use in BiopsiSanomats: cover, content (2 per page), and back cover.",
     "cover_range": "Cover range",
     "content_range": "Content range",
     "back_range": "Back range",
@@ -445,16 +441,14 @@
     "major_explanation": "Your major. Select other if your major is something else than computer science, mathematics, or statistical data analysis.",
     "majors": {
       "other": "Other / Not specified",
-      "computer_science": "Computer Science",
-      "mathematics": "Mathematics",
-      "statistical_data_analysis": "Statistical Data Analysis"
+      "biotechnology": "Biotechnology"
     },
-    "declare_address": "I'm declaring address according to section 4 of Luuppi's rules for the period",
+    "declare_address": "I'm declaring address according to section 4 of Biopsi's rules for the period",
     "address_declarated_info": "Your address declaration is valid",
     "address_not_declared": "You have not made an address declaration for the period",
-    "legacy_migrate_info": "You can link your old website's Luuppi account using this form. Enter your old website email and password in the fields below and press 'Submit'. Please note that your profile needs to fulfill requirements set in Assocations Act Paragraph 11 on the current website.",
+    "legacy_migrate_info": "You can link your old website's Biopsi account using this form. Enter your old website email and password in the fields below and press 'Submit'. Please note that your profile needs to fulfill requirements set in Assocations Act Paragraph 11 on the current website.",
     "migrate_account": "Migrate account",
-    "missing_required_fields": "You are a member of Luuppi, but you are missing some required information. Please provide the missing details. Required fields are marked with an asterisk.",
+    "missing_required_fields": "You are a member of Biopsi, but you are missing some required information. Please provide the missing details. Required fields are marked with an asterisk.",
     "email_subscription": "Email subscription"
   },
   "pages_feedback": {
@@ -466,8 +460,8 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send",
-    "seo_title": "Luuppi ry | Feedback",
-    "seo_description": "Send feedback to Luuppi ry anonymously or with contact information. Feedback is addressed in board meetings.",
+    "seo_title": "Biopsi ry | Feedback",
+    "seo_description": "Send feedback to Biopsi ry anonymously or with contact information. Feedback is addressed in board meetings.",
     "send_feedback": "Send feedback"
   },
   "pages_invite": {
@@ -484,7 +478,7 @@
     "description": "An error occurred while processing your request.",
     "auth_title": "Authentication error",
     "auth_description": "There was an error during authentication. Please try again later.",
-    "seo_title": "Luuppi ry | Error",
+    "seo_title": "Biopsi ry | Error",
     "seo_description": "An error occurred while processing your request.",
     "return_home": "Back to home"
   }

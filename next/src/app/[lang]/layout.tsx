@@ -68,7 +68,7 @@ export default async function RootLayout(props: RootLayoutProps) {
         <PlausibleProvider
           customDomain={process.env.NEXT_PUBLIC_BASE_URL}
           domain={process.env.NEXT_PUBLIC_BASE_URL!?.replace('https://', '')}
-          enabled={process.env.NEXT_PUBLIC_BASE_URL === 'https://luuppi.fi'}
+          enabled={process.env.NEXT_PUBLIC_BASE_URL === 'https://biopsi.fi'}
           scriptProps={{
             src: `${process.env.NEXT_PUBLIC_BASE_URL}/js/nuuhkija.js`,
 

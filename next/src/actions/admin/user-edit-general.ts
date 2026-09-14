@@ -16,7 +16,7 @@ export async function userEditGeneral(
   const session = await auth();
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session');
     return {
       message: dictionary.api.unauthorized,
@@ -27,7 +27,7 @@ export async function userEditGeneral(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {
@@ -80,7 +80,7 @@ export async function userEditGeneral(
     },
     major: {
       value: formData.get('major'),
-      regex: /^(COMPUTER_SCIENCE|MATHEMATICS|STATISTICAL_DATA_ANALYSIS|OTHER)$/,
+      regex: /^(COMPUTER_SCIENCE|MATHEMATICS|STATISTICAL_|OTHER)$/,
       required: true,
     },
   };
@@ -118,13 +118,9 @@ export async function userEditGeneral(
       username: fieldsToUpdate.username,
       preferredFullName: fieldsToUpdate.preferredFullName,
       major:
-        fieldsToUpdate.major === 'COMPUTER_SCIENCE'
-          ? 'COMPUTER_SCIENCE'
-          : fieldsToUpdate.major === 'MATHEMATICS'
-            ? 'MATHEMATICS'
-            : fieldsToUpdate.major === 'STATISTICAL_DATA_ANALYSIS'
-              ? 'STATISTICAL_DATA_ANALYSIS'
-              : 'OTHER',
+        fieldsToUpdate.major === 'BIOTECHNOLOGY'
+          ? 'BIOTECHNOLOGY'
+            : 'OTHER',
       domicle: fieldsToUpdate.domicle,
     },
   });

@@ -28,7 +28,7 @@ export default async function AdminEventDetail(props: AdminEventDetailProps) {
 
   const user = session?.user;
 
-  if (!user?.entraUserUuid || !user?.isLuuppiHato) {
+  if (!user?.entraUserUuid || !user?.isBiopsiHato) {
     logger.error('User not found in session or does not have required role');
     redirect(`/${params.lang}`);
   }
@@ -36,7 +36,7 @@ export default async function AdminEventDetail(props: AdminEventDetailProps) {
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID,
       OR: [
         {
           expiresAt: {

@@ -22,7 +22,7 @@ export default async function MeetingMinute(props: MeetingMinuteProps) {
   const dictionary = await getDictionary(params.lang);
 
   const user = session?.user;
-  if (!user?.entraUserUuid || !user?.isLuuppiMember) {
+  if (!user?.entraUserUuid || !user?.isBiopsiMember) {
     return (
       <div className="relative flex flex-col gap-12">
         <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-2">

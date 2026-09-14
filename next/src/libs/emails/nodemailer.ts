@@ -17,8 +17,8 @@ const transporter = nodemailer.createTransport({
 
 const defaults = {
   from: {
-    name: process.env.SMTP_FROM_NAME || 'Luuppi',
-    address: process.env.SMTP_FROM_ADDRESS || 'notifications@luuppi.fi',
+    name: process.env.SMTP_FROM_NAME || 'Biopsi',
+    address: process.env.SMTP_FROM_ADDRESS || 'notifications@biopsi.fi',
   },
 } as const;
 

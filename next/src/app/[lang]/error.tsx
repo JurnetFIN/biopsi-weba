@@ -35,8 +35,8 @@ export default function Error({
           <h1>{lang === 'en' ? 'Unexpected error' : 'Odottamaton virhe'}</h1>
           <p className="max-w-xl text-lg max-md:text-base">
             {lang === 'en'
-              ? 'An unexpected error occurred. This should not happen, so to fix the problem, it is recommended to contact the WWW/IT responsible by email: webmaster@luuppi.fi'
-              : 'Odottamaton virhe tapahtui. Tätä ei pitäisi tapahtua, joten ongelman korjaamiseksi on suositeltavaa ottaa yhteyttä WWW/IT-vastaaviin sähköpostitse: webmaster@luuppi.fi'}
+              ? 'An unexpected error occurred. This should not happen, so to fix the problem, it is recommended to contact the WWW/IT responsible by email: webmaster@biopsi.fi'
+              : 'Odottamaton virhe tapahtui. Tätä ei pitäisi tapahtua, joten ongelman korjaamiseksi on suositeltavaa ottaa yhteyttä WWW/IT-vastaaviin sähköpostitse: webmaster@biopsi.fi'}
           </p>
           <div className="flex gap-2">
             <button

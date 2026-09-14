@@ -8,6 +8,8 @@
 //                      default "end")
 
 import { auth } from '@/auth';
+import { getDictionary } from '@/dictionaries';
+import prisma from '@/libs/db/prisma';
 import { logger } from '@/libs/utils/logger';
 import { NextRequest, NextResponse } from 'next/server';
 import { execFile } from 'node:child_process';
@@ -15,8 +17,6 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import { getDictionary } from '@/dictionaries';
-import prisma from '@/libs/db/prisma';
 
 export const maxDuration = 60;
 
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
 
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session');
     return NextResponse.json(
       { message: dictionary.api.unauthorized, isError: true },
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [{ expiresAt: { gte: new Date() } }, { expiresAt: null }],
     },
   });

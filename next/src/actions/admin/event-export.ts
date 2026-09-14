@@ -29,7 +29,7 @@ export async function eventExport(lang: SupportedLanguage, eventId: number) {
   const session = await auth();
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session');
     return {
       message: dictionary.api.unauthorized,
@@ -40,7 +40,7 @@ export async function eventExport(lang: SupportedLanguage, eventId: number) {
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {

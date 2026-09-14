@@ -1,78 +1,78 @@
 export const luuppiEmails = [
   {
-    email: 'hallitus-sisainen@luuppi.fi',
+    email: 'hallitus-sisainen@biopsi.fi',
     translation: 'entire_board',
   },
   {
-    email: 'pj@luuppi.fi',
+    email: 'pj@biopsi.fi',
     translation: 'chairperson',
   },
   {
-    email: 'vpj@luuppi.fi',
+    email: 'vpj@biopsi.fi',
     translation: 'vice_chairperson',
   },
   {
-    email: 'webmaster@luuppi.fi',
+    email: 'webmaster@biopsi.fi',
     translation: 'www_it_representative',
   },
   {
-    email: 'yritys@luuppi.fi',
+    email: 'yritys@biopsi.fi',
     translation: 'business',
   },
   {
-    email: 'rahasto@luuppi.fi',
+    email: 'rahasto@biopsi.fi',
     translation: 'treasurer',
   },
   {
-    email: 'kopo@luuppi.fi',
+    email: 'kopo@biopsi.fi',
     translation: 'education_representative',
   },
   {
-    email: 'viestinta@luuppi.fi',
+    email: 'viestinta@biopsi.fi',
     translation: 'communications_representative',
   },
   {
-    email: 'kolmio@luuppi.fi',
+    email: 'kolmio@biopsi.fi',
     translation: 'kolmio_representative',
   },
   {
-    email: 'tutor@luuppi.fi',
+    email: 'tutor@biopsi.fi',
     translation: 'tutoring_representative',
   },
   {
-    email: 'kv@luuppi.fi',
+    email: 'kv@biopsi.fi',
     translation: 'international_representative',
   },
   {
-    email: 'liikunta@luuppi.fi',
+    email: 'liikunta@biopsi.fi',
     translation: 'sports_representative',
   },
   {
-    email: 'tapahtuma@luuppi.fi',
+    email: 'tapahtuma@biopsi.fi',
     translation: 'event_representative',
   },
   {
-    email: 'kestavakehitys@luuppi.fi',
+    email: 'kestavakehitys@biopsi.fi',
     translation: 'sustainable_development_representive',
   },
   {
-    email: 'toimitila@luuppi.fi',
+    email: 'toimitila@biopsi.fi',
     translation: 'premises_representative',
   },
   {
-    email: 'sopo@luuppi.fi',
+    email: 'sopo@biopsi.fi',
     translation: 'social_policy_representative',
   },
   {
-    email: 'yhdenvertaisuus@luuppi.fi',
+    email: 'yhdenvertaisuus@biopsi.fi',
     translation: 'equality_representative',
   },
   {
-    email: 'sanomat@luuppi.fi',
-    translation: 'editor_in_chief_of_luuppisanomat',
+    email: 'sanomat@biopsi.fi',
+    translation: 'editor_in_chief_of_biopsisanomat',
   },
   {
-    email: 'sihteeri@luuppi.fi',
+    email: 'sihteeri@biopsi.fi',
     translation: 'secretary',
   },
 ];

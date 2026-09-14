@@ -38,12 +38,12 @@ export default function AdminUserGeneral({
     setFormResponse(response);
   };
 
-  const userIsLuuppiMember = user.roles.some(
-    (role) => role.strapiRoleUuid === process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID,
+  const userIsBiopsiMember = user.roles.some(
+    (role) => role.strapiRoleUuid === process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID,
   );
 
   const hasMissingInformation =
-    userIsLuuppiMember &&
+    userIsBiopsiMember &&
     (!user.firstName || !user.lastName || !user.domicle || !user.major);
 
   return (

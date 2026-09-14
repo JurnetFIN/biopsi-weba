@@ -11,9 +11,9 @@ export default ({ env }) => {
         maxAge: 86_400_000,
       },
     },
-    "luuppi-blocks": {
+    "biopsi-blocks": {
       enabled: true,
-      resolve: `./src/plugins/luuppi-blocks`,
+      resolve: `./src/plugins/biopsi-blocks`,
     },
     email: {
       config: {
@@ -25,8 +25,8 @@ export default ({ env }) => {
           ignoreTLS: true,
         },
         settings: {
-          defaultFrom: "cms@luuppi.fi",
-          defaultReplyTo: "cms@luuppi.fi",
+          defaultFrom: "cms@biopsi.fi",
+          defaultReplyTo: "cms@biopsi.fi",
         },
       },
     },

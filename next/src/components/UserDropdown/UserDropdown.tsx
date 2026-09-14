@@ -45,8 +45,8 @@ export default function UserDropdown({
         </div>
         <CloseableLinks
           dictionary={dictionary}
-          isLuuppiHato={session.user?.isLuuppiHato ?? false}
-          isLuuppiMember={session.user?.isLuuppiMember ?? false}
+          isBiopsiHato={session.user?.isBiopsiHato ?? false}
+          isBiopsiMember={session.user?.isBiopsiMember ?? false}
           lang={lang}
         />
         <div className="divider my-1" />

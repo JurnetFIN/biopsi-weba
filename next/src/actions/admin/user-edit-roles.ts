@@ -30,7 +30,7 @@ export async function userEditRoles(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {
@@ -99,7 +99,7 @@ export async function userEditRoles(
   const illegalRoles = SUPER_ADMINS.includes(user.entraUserUuid)
     ? []
     : [
-        process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+        process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
         process.env.NEXT_PUBLIC_NO_ROLE_ID!,
       ];
 
@@ -134,8 +134,8 @@ export async function userEditRoles(
   }
 
   // Check if luuppi-member role is being added
-  const luuppiMemberId = process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!;
-  const isAddingMemberRole = strapiRoleUuids.includes(luuppiMemberId);
+  const biopsiMemberId = process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!;
+  const isAddingMemberRole = strapiRoleUuids.includes(biopsiMemberId);
 
   // Validate required fields for member role
   if (isAddingMemberRole) {

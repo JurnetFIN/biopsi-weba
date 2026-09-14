@@ -92,8 +92,8 @@ export default async function Profile(props: ProfileProps) {
 
   const roles = localUser?.roles.map((role) => role.role.strapiRoleUuid) ?? [];
 
-  const isLuuppiMember = roles.includes(
-    process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+  const isBiopsiMember = roles.includes(
+    process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
   );
 
   return (
@@ -107,16 +107,16 @@ export default async function Profile(props: ProfileProps) {
         />
         <ProfileUserInfoForm
           dictionary={dictionary}
-          isLuuppiMember={isLuuppiMember}
+          isBiopsiMember={isBiopsiMember}
           lang={params.lang}
           user={localUser}
         />
-        {Boolean(isLuuppiMember) && (
+        {Boolean(isBiopsiMember) && (
           <>
             <ProfileUserAddressDeclaration
               declared={declared}
               dictionary={dictionary}
-              isLuuppiMember={isLuuppiMember}
+              isBiopsiMember={isBiopsiMember}
               lang={params.lang}
               user={localUser}
             />

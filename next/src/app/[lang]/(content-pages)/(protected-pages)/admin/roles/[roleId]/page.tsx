@@ -17,14 +17,14 @@ export default async function RolePage(props: RolePageProps) {
   const session = await auth();
   const dictionary = await getDictionary(lang);
 
-  if (!session?.user?.isLuuppiHato || !session?.user?.entraUserUuid) {
+  if (!session?.user?.isBiopsiHato || !session?.user?.entraUserUuid) {
     redirect(`/${lang}`);
   }
 
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: session.user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [{ expiresAt: { gte: new Date() } }, { expiresAt: null }],
     },
   });

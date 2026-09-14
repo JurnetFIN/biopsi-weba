@@ -1,10 +1,8 @@
 import { SupportedLanguage } from '@/models/locale';
 import Image from 'next/image';
-import bannerDesktop from '../../../public/banner.png';
-import bannerMobile from '../../../public/banner_mobile.png';
 import binarySvg from '../../../public/binary.svg';
-import luuppiBannerTextEn from '../../../public/luuppi_banner_text_en.svg';
-import luuppiBannerTextFi from '../../../public/luuppi_banner_text_fi.svg';
+import biopsiBannerTextEn from '../../../public/biopsi_banner_text_en.svg';
+import biopsiBannerTextFi from '../../../public/biopsi_banner_text_fi.svg';
 
 interface BannerProps {
   lang: SupportedLanguage;
@@ -15,17 +13,31 @@ export default function Banner({ lang }: BannerProps) {
     <section>
       <div className="h-72 bg-secondary-400 transition-all duration-300 max-md:h-48">
         <div className="relative flex h-full w-full justify-center overflow-hidden">
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+          >
+            <source src="https://biopsi.fi/w7gHt/wp-content/uploads/2020/05/Biopsi_ry_helix.mp4" type="video/mp4" />
+          </video>
+
           <div className="relative z-10 flex h-full w-full max-md:h-48">
             <Image
-              alt="Luuppi banner text"
+              alt="Biopsi banner text"
               className="z-20 object-contain p-6 drop-shadow-[-6px_6px_#00000030] filter max-lg:drop-shadow-[-4px_4px_#00000030] max-md:p-4"
               draggable={false}
-              src={lang === 'en' ? luuppiBannerTextEn : luuppiBannerTextFi}
+              src={lang === 'en' ? biopsiBannerTextEn : biopsiBannerTextFi}
               fill
               preload
             />
+
             <Image
-              alt="Luuppi banner text"
+              alt=""
+              aria-hidden="true"
               className="z-10 object-cover opacity-[0.04] max-lg:scale-[2] max-md:scale-[3]"
               draggable={false}
               loading="lazy"
@@ -33,26 +45,6 @@ export default function Banner({ lang }: BannerProps) {
               fill
             />
           </div>
-          <Image
-            alt="Luuppi banner"
-            className="object-cover max-lg:hidden"
-            draggable={false}
-            fetchPriority="high"
-            loading="eager"
-            quality={100}
-            src={bannerDesktop}
-            fill
-          />
-          <Image
-            alt="Luuppi banner"
-            className="object-cover lg:hidden"
-            draggable={false}
-            fetchPriority="high"
-            loading="eager"
-            quality={100}
-            src={bannerMobile}
-            fill
-          />
         </div>
       </div>
     </section>

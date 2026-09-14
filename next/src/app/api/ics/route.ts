@@ -83,7 +83,7 @@ export async function GET(request: NextRequest) {
   );
 
   const ics = ical({
-    name: 'Luuppi Events',
+    name: 'Biopsi Events',
     timezone: 'Europe/Helsinki',
   });
 

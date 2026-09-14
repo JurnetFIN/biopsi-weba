@@ -82,9 +82,7 @@
       "required": true,
       "enum": [
         "everybody",
-        "computer_science",
-        "mathematics",
-        "data_analysis"
+        "biotechnology"
       ]
     },
     "jobOpportunityDateEnding": {

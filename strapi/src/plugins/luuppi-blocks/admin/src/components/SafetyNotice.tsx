@@ -3,13 +3,13 @@ import { ComponentType, SVGProps } from "react";
 import {
   BaseElement,
   Editor,
+  Path,
   Element as SlateElement,
   Transforms,
-  Path,
 } from "slate";
 
 const safetyLink = (lang: string) =>
-  `https://luuppi.fi/${lang}/organization/documents`;
+  `https://biopsi.fi/${lang}/organization/documents`;
 
 const SAFETY_NOTICE_FI = {
   before:
@@ -21,10 +21,10 @@ const SAFETY_NOTICE_FI = {
 
 const SAFETY_NOTICE_EN = {
   before:
-    "The event follows Luuppi’s equality plan and principles for a safer space, which can be found ",
+    "The event follows Biopsi’s equality plan and principles for a safer space, which can be found ",
   linkText: "here",
   after:
-    ". In case of harassment, please contact the main organizer or Luuppi’s equality representative.",
+    ". In case of harassment, please contact the main organizer or Biopsi’s equality representative.",
 };
 
 function buildSafetyChildren(notice: typeof SAFETY_NOTICE_FI, lang: string) {
@@ -57,7 +57,7 @@ export function makeSafetyNotice(lang: "fi" | "en"): SafetyNoticeBlock {
     ),
     icon: Paragraph,
     label: {
-      id: `luuppi-blocks.blocks.safetyNotice.${lang}`,
+      id: `biopsi-blocks.blocks.safetyNotice.${lang}`,
       defaultMessage:
         lang === "fi" ? "Turvallisemman tilan ohje" : "Safer space notice",
     },

@@ -68,8 +68,8 @@ export async function profileUpdate(
 
   const roles = localUser?.roles.map((role) => role.role.strapiRoleUuid) ?? [];
 
-  const isLuuppiMember = roles.includes(
-    process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+  const isBiopsiMember = roles.includes(
+    process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
   );
 
   const fields: Record<
@@ -88,17 +88,17 @@ export async function profileUpdate(
     firstName: {
       value: formData.get('firstName'),
       regex: /^.{2,70}$/,
-      required: isLuuppiMember,
+      required: isBiopsiMember,
     },
     lastName: {
       value: formData.get('lastName'),
       regex: /^.{2,35}$/,
-      required: isLuuppiMember,
+      required: isBiopsiMember,
     },
     domicle: {
       value: formData.get('domicle'),
       regex: /^.{2,35}$/,
-      required: isLuuppiMember,
+      required: isBiopsiMember,
     },
     preferredFullName: {
       value: formData.get('preferredFullName'),
@@ -106,8 +106,8 @@ export async function profileUpdate(
     },
     major: {
       value: formData.get('major'),
-      regex: /^(COMPUTER_SCIENCE|MATHEMATICS|STATISTICAL_DATA_ANALYSIS|OTHER)$/,
-      required: isLuuppiMember,
+      regex: /^(BIOTECHNOLOGY|OTHER)$/,
+      required: isBiopsiMember,
     },
   };
 
@@ -144,13 +144,9 @@ export async function profileUpdate(
       username: fieldsToUpdate.username,
       preferredFullName: fieldsToUpdate.preferredFullName,
       major:
-        fieldsToUpdate.major === 'COMPUTER_SCIENCE'
-          ? 'COMPUTER_SCIENCE'
-          : fieldsToUpdate.major === 'MATHEMATICS'
-            ? 'MATHEMATICS'
-            : fieldsToUpdate.major === 'STATISTICAL_DATA_ANALYSIS'
-              ? 'STATISTICAL_DATA_ANALYSIS'
-              : 'OTHER',
+        fieldsToUpdate.major === 'BIOTECHNOLOGY'
+          ? 'BIOTECHNOLOGY'
+            : 'OTHER',
       domicle: fieldsToUpdate.domicle,
     },
   });

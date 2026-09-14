@@ -1,18 +1,18 @@
 'use client';
 import {
-  GetUsersResponse,
-  GetUsersSuccessResponse,
+    GetUsersResponse,
+    GetUsersSuccessResponse,
 } from '@/app/api/users/route';
-import { Dictionary, SupportedLanguage } from '@/models/locale';
-import { useRouter } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
 import Alert from '@/components/AdminShared/components/Alert';
 import DataTable, {
-  TableColumn,
+    TableColumn,
 } from '@/components/AdminShared/components/DataTable';
 import Pagination from '@/components/AdminShared/components/Pagination';
 import SearchBar from '@/components/AdminShared/components/SearchBar';
 import { useDebounce } from '@/components/AdminShared/hooks/useDebounce';
+import { Dictionary, SupportedLanguage } from '@/models/locale';
+import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useState } from 'react';
 
 interface AdminUsersTableProps {
   dictionary: Dictionary;
@@ -71,7 +71,7 @@ export default function AdminUsersTable({
 
   const getMembershipInfo = (user: UserRow) => {
     const memberRole = user.roles.find(
-      (r) => r.role.strapiRoleUuid === process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID,
+      (r) => r.role.strapiRoleUuid === process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID,
     );
     return {
       isMember: Boolean(memberRole),

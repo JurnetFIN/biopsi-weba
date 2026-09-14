@@ -59,7 +59,7 @@ importers:
         specifier: ^6.3.11
         version: 6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
-  src/plugins/luuppi-blocks:
+  src/plugins/biopsi-blocks:
     dependencies:
       '@strapi/design-system':
         specifier: ^2.0.0-rc.30

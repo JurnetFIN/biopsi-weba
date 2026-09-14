@@ -1,18 +1,15 @@
 import { footerLinks } from '@/libs/constants';
 import { Dictionary, SupportedLanguage } from '@/models/locale';
+import { cacheLife } from 'next/cache';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  FaDiscord,
   FaFacebook,
-  FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaTelegram,
-  FaTiktok,
+  FaTiktok
 } from 'react-icons/fa';
-import luuppiSvg from '../../../public/luuppi.svg';
-import { cacheLife } from 'next/cache';
+import biopsiSvg from '../../../public/biopsi.svg';
 
 interface FooterProps {
   dictionary: Dictionary;
@@ -60,46 +57,37 @@ export default async function Footer({ dictionary, lang }: FooterProps) {
           <div className="flex items-center gap-12 max-md:flex-col max-md:items-start max-md:gap-4">
             <div className="flex items-center gap-4">
               <Image
-                alt="Luuppi logo"
+                alt="Biopsi logo"
                 className={'object-contain'}
                 draggable={false}
                 height={80}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                src={luuppiSvg}
+                src={biopsiSvg}
                 width={95}
               />
               <div className="flex flex-col text-sm text-white">
-                <p>{new Date().getFullYear()} © Luuppi ry</p>
+                <p>{new Date().getFullYear()} © Biopsi ry</p>
                 <p className="text-xs">
-                  {`${dictionary.general.business_id}: 0512347-2`}
+                  {`${dictionary.general.business_id}: 2101176-1`}
                 </p>
               </div>
             </div>
           </div>
           <div className="flex gap-4">
-            <Link aria-label="Telegram" href="https://t.me/Luuppi">
-              <FaTelegram className="text-white" size={20} />
-            </Link>
-            <Link aria-label="GitHub" href="https://github.com/luuppiry">
-              <FaGithub className="text-white" size={20} />
-            </Link>
             <Link
               aria-label="Facebook"
-              href="https://www.facebook.com/luuppiry"
+              href="https://www.facebook.com/utabiopsi"
             >
               <FaFacebook className="text-white" size={20} />
             </Link>
-            <Link aria-label="TikTok" href="https://www.tiktok.com/@luuppiry">
+            <Link aria-label="TikTok" href="https://www.tiktok.com/@biopsiry">
               <FaTiktok className="text-white" size={20} />
             </Link>
             <Link
               aria-label="Instagram"
-              href="https://www.instagram.com/luuppiry/"
+              href="https://www.instagram.com/biopsiry/"
             >
               <FaInstagram className="text-white" size={20} />
-            </Link>
-            <Link aria-label="Discord" href="https://discord.gg/HZkwtwFmDK">
-              <FaDiscord className="text-white" size={20} />
             </Link>
             <Link
               aria-label="Discord"

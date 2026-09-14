@@ -19,7 +19,7 @@ export async function togglePickupStatus(
   const session = await auth();
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session or does not have required role');
     return {
       message: dictionary.api.unauthorized,
@@ -30,7 +30,7 @@ export async function togglePickupStatus(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [
         {
           expiresAt: {

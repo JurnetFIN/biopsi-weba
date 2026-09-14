@@ -26,7 +26,7 @@ interface ProfileUserAddressDeclarationProps {
   user: User;
   lang: SupportedLanguage;
   dictionary: Dictionary;
-  isLuuppiMember: boolean;
+  isBiopsiMember: boolean;
 }
 
 export default function ProfileUserAddressDeclaration({
@@ -34,7 +34,7 @@ export default function ProfileUserAddressDeclaration({
   user,
   lang,
   dictionary,
-  isLuuppiMember,
+  isBiopsiMember,
 }: ProfileUserAddressDeclarationProps) {
   const [formResponse, setFormResponse] = useState(initialState);
 
@@ -43,7 +43,7 @@ export default function ProfileUserAddressDeclaration({
     setFormResponse(response);
   };
 
-  const hasMissingInformation = isLuuppiMember && !user.domicle;
+  const hasMissingInformation = isBiopsiMember && !user.domicle;
 
   const declarationYear = getDeclarationYear();
 
@@ -113,7 +113,7 @@ export default function ProfileUserAddressDeclaration({
         }
         marginTop={false}
         placeholder={dictionary.general.domicle}
-        required={isLuuppiMember}
+        required={isBiopsiMember}
         title={dictionary.general.domicle}
         type="text"
         value={user.domicle ?? ''}

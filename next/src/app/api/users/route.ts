@@ -64,7 +64,7 @@ export async function GET(
 
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session');
     return NextResponse.json(
       { message: dictionary.api.unauthorized, isError: true },
@@ -75,7 +75,7 @@ export async function GET(
   const hasHatoRole = await prisma.rolesOnUsers.findFirst({
     where: {
       entraUserUuid: user.entraUserUuid,
-      strapiRoleUuid: process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!,
+      strapiRoleUuid: process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
       OR: [{ expiresAt: { gte: new Date() } }, { expiresAt: null }],
     },
   });

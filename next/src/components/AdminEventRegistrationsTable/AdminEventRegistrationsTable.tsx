@@ -26,7 +26,7 @@ export default async function AdminEventRegistrationsList({
 }: AdminEventRegistrationsListProps) {
   const session = await auth();
 
-  if (!session?.user || !session.user.isLuuppiHato) {
+  if (!session?.user || !session.user.isBiopsiHato) {
     logger.error('User not found in session or does not have required role');
     redirect(`/${lang}`);
   }

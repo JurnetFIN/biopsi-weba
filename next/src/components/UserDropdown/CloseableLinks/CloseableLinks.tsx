@@ -7,15 +7,15 @@ import { RiAdminLine, RiCalendarEventLine, RiUser3Fill } from 'react-icons/ri';
 interface CloseableLinkProps {
   lang: SupportedLanguage;
   dictionary: Dictionary;
-  isLuuppiHato?: boolean;
-  isLuuppiMember?: boolean;
+  isBiopsiHato?: boolean;
+  isBiopsiMember?: boolean;
 }
 
 export default function CloseableLink({
   lang,
   dictionary,
-  isLuuppiHato,
-  isLuuppiMember,
+  isBiopsiHato,
+  isBiopsiMember,
 }: CloseableLinkProps) {
   const handleClick = () => {
     const elem = document.activeElement as HTMLElement;
@@ -42,7 +42,7 @@ export default function CloseableLink({
         <RiCalendarEventLine size={22} />
         {dictionary.navigation.own_events}
       </Link>
-      {!isLuuppiMember && (
+      {!isBiopsiMember && (
         <Link
           className="btn btn-ghost btn-sm w-full justify-start"
           href={`/${lang}/migrate-account`}
@@ -51,7 +51,7 @@ export default function CloseableLink({
           {dictionary.navigation.migrate_account}
         </Link>
       )}
-      {isLuuppiHato && (
+      {isBiopsiHato && (
         <Link
           className="btn btn-ghost btn-sm justify-start"
           href={`/${lang}/admin?mode=event`}

@@ -41,8 +41,8 @@ export const {
     async session({ session, token }) {
       if (token) {
         session.user.entraUserUuid = token.id as string;
-        session.user.isLuuppiHato = token.isLuuppiHato as boolean;
-        session.user.isLuuppiMember = token.isLuuppiMember as boolean;
+        session.user.isBiopsiHato = token.isBiopsiHato as boolean;
+        session.user.isBiopsiMember = token.isBiopsiMember as boolean;
         session.user.name = token.username as string;
       }
 
@@ -142,9 +142,9 @@ export const {
         const hasRole = (roleUuid: string) =>
           localUser.roles.some((role) => role.role.strapiRoleUuid === roleUuid);
 
-        token.isLuuppiHato = hasRole(process.env.NEXT_PUBLIC_LUUPPI_HATO_ID!);
-        token.isLuuppiMember = hasRole(
-          process.env.NEXT_PUBLIC_LUUPPI_MEMBER_ID!,
+        token.isBiopsiHato = hasRole(process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!);
+        token.isBiopsiMember = hasRole(
+          process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
         );
         token.username = localUser.username;
         token.version = process.env.TOKEN_VERSION;

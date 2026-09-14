@@ -40,20 +40,20 @@ export default function MobileHamburger({
     const isAuthenticated = Boolean(
       link.authenticationLevel === 'authenticated' && session?.user,
     );
-    const isLuuppiHato = Boolean(
-      link.authenticationLevel === 'luuppi-hato' && session?.user?.isLuuppiHato,
+    const isBiopsiHato = Boolean(
+      link.authenticationLevel === 'luuppi-hato' && session?.user?.isBiopsiHato,
     );
     const isUnrestricted = !link.authenticationLevel;
 
     // TODO: Remove this when migration period is over
     if (
       link.translation === 'migrate_account' &&
-      session?.user?.isLuuppiMember
+      session?.user?.isBiopsiMember
     ) {
       return false;
     }
 
-    return isAuthenticated || isLuuppiHato || isUnrestricted;
+    return isAuthenticated || isBiopsiHato || isUnrestricted;
   };
 
   return (
