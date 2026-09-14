@@ -53,11 +53,11 @@
   },
   "strapi": {
     "kind": "plugin",
-    "name": "biopsi-blocks",
-    "displayName": "biopsi-blocks\u0017\u0017",
+    "name": "luuppi-blocks",
+    "displayName": "luuppi-blocks\u0017\u0017",
     "description": "Custom blocks for the rich text editor"
   },
-  "name": "biopsi-blocks",
+  "name": "luuppi-blocks",
   "description": "Custom blocks for the rich text editor",
   "license": "MIT",
   "author": "Jasper Nykänen <jasperjnykanen@gmail.com>"

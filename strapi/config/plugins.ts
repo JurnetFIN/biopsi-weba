@@ -11,9 +11,9 @@ export default ({ env }) => {
         maxAge: 86_400_000,
       },
     },
-    "biopsi-blocks": {
+    "luuppi-blocks": {
       enabled: true,
-      resolve: `./src/plugins/biopsi-blocks`,
+      resolve: `./src/plugins/luuppi-blocks`,
     },
     email: {
       config: {

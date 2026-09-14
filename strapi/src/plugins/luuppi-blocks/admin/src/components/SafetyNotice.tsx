@@ -1,11 +1,11 @@
 import { Paragraph } from "@strapi/icons";
 import { ComponentType, SVGProps } from "react";
 import {
-  BaseElement,
-  Editor,
-  Path,
-  Element as SlateElement,
-  Transforms,
+    BaseElement,
+    Editor,
+    Path,
+    Element as SlateElement,
+    Transforms,
 } from "slate";
 
 const safetyLink = (lang: string) =>
@@ -57,7 +57,7 @@ export function makeSafetyNotice(lang: "fi" | "en"): SafetyNoticeBlock {
     ),
     icon: Paragraph,
     label: {
-      id: `biopsi-blocks.blocks.safetyNotice.${lang}`,
+      id: `luuppi-blocks.blocks.safetyNotice.${lang}`,
       defaultMessage:
         lang === "fi" ? "Turvallisemman tilan ohje" : "Safer space notice",
     },

@@ -1,15 +1,15 @@
 import type {
-  ContentManagerPlugin,
-  SelectorBlock,
+    ContentManagerPlugin,
+    SelectorBlock,
 } from "@strapi/content-manager/strapi-admin";
 import { Information, Minus, Quotes } from "@strapi/icons";
 import {
-  BaseElement,
-  Editor,
-  Path,
-  Element as SlateElement,
-  Node as SlateNode,
-  Transforms,
+    BaseElement,
+    Editor,
+    Path,
+    Element as SlateElement,
+    Node as SlateNode,
+    Transforms,
 } from "slate";
 import { ReactEditor, useFocused, useSelected } from "slate-react";
 import { styled } from "styled-components";
@@ -76,7 +76,7 @@ export default {
             </div>
           ),
         icon: Quotes,
-        label: { id: "biopsi-blocks.blocks.quote", defaultMessage: "Quote" },
+        label: { id: "luuppi-blocks.blocks.quote", defaultMessage: "Quote" },
         matchNode: (node) =>
           SlateElement.isElement(node) && node.type === "quote",
         isInBlocksSelector: true,
@@ -101,7 +101,7 @@ export default {
         ),
         icon: Information,
         label: {
-          id: "biopsi-blocks.blocks.callout",
+          id: "luuppi-blocks.blocks.callout",
           defaultMessage: "Callout",
         },
         matchNode: (node) =>
@@ -128,7 +128,7 @@ export default {
       hr: {
         icon: Minus,
         renderElement: (props) => <HrElement {...props} />,
-        label: { id: "biopsi-blocks.blocks.hr", defaultMessage: "Divider" },
+        label: { id: "luuppi-blocks.blocks.hr", defaultMessage: "Divider" },
         matchNode: (node) =>
           SlateElement.isElement(node) &&
           node.type === "paragraph" &&

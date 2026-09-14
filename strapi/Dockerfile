@@ -17,7 +17,7 @@ WORKDIR /opt/app
 ENV CI=true
 COPY --from=deps /opt/app ./
 
-RUN pnpm --filter biopsi-blocks build
+RUN pnpm --filter luuppi-blocks build
 RUN pnpm build
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm prune --prod 

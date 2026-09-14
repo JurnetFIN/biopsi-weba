@@ -1,1 +1,1 @@
-export const PLUGIN_ID = 'biopsi-blocks';
+export const PLUGIN_ID = 'luuppi-blocks';

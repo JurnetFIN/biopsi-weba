@@ -8,4 +8,4 @@ onlyBuiltDependencies:
 
 packages: 
  - .
- - src/plugins/biopsi-blocks
+ - src/plugins/luuppi-blocks
