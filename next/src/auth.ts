@@ -73,7 +73,7 @@ export const {
         if (!idToken) return token;
 
         let decoded: null | {
-          email?: string;
+          email: string;
           emails?: string[];
           preferred_username?: string;
           name?: string;
@@ -82,7 +82,7 @@ export const {
 
         try {
           decoded = jwt.decode(idToken) as {
-            email?: string;
+            email: string;
             emails?: string[];
             preferred_username?: string;
             name?: string;
