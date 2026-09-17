@@ -14,13 +14,13 @@ export default function Banner({ lang }: BannerProps) {
       <div className="h-72 bg-secondary-400 transition-all duration-300 max-md:h-48">
         <div className="relative flex h-full w-full justify-center overflow-hidden">
           <video
+            aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"
+            preload="auto"
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
-            aria-hidden="true"
           >
             <source src="https://biopsi.fi/w7gHt/wp-content/uploads/2020/05/Biopsi_ry_helix.mp4" type="video/mp4" />
           </video>
@@ -31,8 +31,8 @@ export default function Banner({ lang }: BannerProps) {
               className="z-20 object-contain p-6 drop-shadow-[-6px_6px_#00000030] filter max-lg:drop-shadow-[-4px_4px_#00000030] max-md:p-4"
               draggable={false}
               src={lang === 'en' ? biopsiBannerTextEn : biopsiBannerTextFi}
-              preload
               fill
+              preload
             />
 
             <Image
