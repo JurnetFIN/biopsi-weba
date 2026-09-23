@@ -1,7 +1,6 @@
 'use client';
 import { Dictionary, SupportedLanguage } from '@/models/locale';
 import Link from 'next/link';
-import { MdOutlineBackup } from 'react-icons/md';
 import { RiAdminLine, RiCalendarEventLine, RiUser3Fill } from 'react-icons/ri';
 
 interface CloseableLinkProps {
@@ -42,15 +41,6 @@ export default function CloseableLink({
         <RiCalendarEventLine size={22} />
         {dictionary.navigation.own_events}
       </Link>
-      {!isBiopsiMember && (
-        <Link
-          className="btn btn-ghost btn-sm w-full justify-start"
-          href={`/${lang}/migrate-account`}
-        >
-          <MdOutlineBackup size={22} />
-          {dictionary.navigation.migrate_account}
-        </Link>
-      )}
       {isBiopsiHato && (
         <Link
           className="btn btn-ghost btn-sm justify-start"

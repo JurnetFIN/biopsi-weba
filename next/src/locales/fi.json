@@ -40,7 +40,6 @@
     "invalid_answer": "Kelvoton vastaus",
     "email_registration_confirmation_subject": "Vahvistus tapahtumailmoittautumisesta",
     "invalid_credentials": "Virheellinen käyttäjä",
-    "legacy_account_migrated": "Vanhan verkkosivun Biopsi-tilisi on linkitetty uuteen tiliisi ja sinulla on nyt jäsen-rooli!",
     "invalid_answer_time": "Et voi enää muuttaa vastauksiasi. Jos sinun täytyy tehdä muutoksia, ota yhteyttä tapahtuman järjestäjään.",
     "user_not_found": "Käyttäjää ei löytynyt",
     "user_updated": "Käyttäjän tiedot päivitetty. Osa muutoksista tulee voimaan vasta uudelleenkirjautumisen jälkeen.",
@@ -234,8 +233,7 @@
     "job_opportunities": "Avoimet työpaikat",
     "profile": "Profiili",
     "own_events": "Omat tapahtumat",
-    "admin": "Ylläpito",
-    "migrate_account": "Linkitä vanha tili"
+    "admin": "Ylläpito"
   },
   "pages_home": {
     "hero": {
@@ -447,8 +445,6 @@
     "declare_address": "Ilmoitan tekeväni osoitteenilmoituksen Biopsin sääntöjen 4 § mukaan ajalle",
     "address_declarated_info": "Osoitteenilmoituksesi on voimassa",
     "address_not_declared": "Et ole tehnyt osoitteenilmoitusta kaudelle",
-    "legacy_migrate_info": "Voit linkittää vanhan verkkosivuston Biopsi-tilisi tämän lomakkeen avulla. Syötä vanhan verkkosivuston sähköpostiosoitteesi ja salasanasi alla oleviin kenttiin ja paina 'Lähetä'. Huomaa, että profiilisi nykyisillä sivuilla pitää olla Yhdistyslain 11 § mukainen.",
-    "migrate_account": "Linkitä vanha Biopsi-tili",
     "missing_required_fields": "Olet Biopsin jäsen, mutta sinulta puuttuu pakollisia tietoja. Ole hyvä ja täytä puuttuvat tiedot. Pakolliset kentät on merkitty tähdellä.",
     "email_subscription": "Sähköpostilistat"
   },

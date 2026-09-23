@@ -45,14 +45,6 @@ export default function MobileHamburger({
     );
     const isUnrestricted = !link.authenticationLevel;
 
-    // TODO: Remove this when migration period is over
-    if (
-      link.translation === 'migrate_account' &&
-      session?.user?.isBiopsiMember
-    ) {
-      return false;
-    }
-
     return isAuthenticated || isBiopsiHato || isUnrestricted;
   };
 

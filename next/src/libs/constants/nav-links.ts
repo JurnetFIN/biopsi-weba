@@ -166,11 +166,6 @@ export const navLinksMobile: NavLink[] = [
     authenticationLevel: 'authenticated',
   },
   {
-    translation: 'migrate_account',
-    href: '/migrate-account',
-    authenticationLevel: 'authenticated',
-  },
-  {
     translation: 'admin',
     href: '/admin?mode=event',
     authenticationLevel: 'biopsi-hato',

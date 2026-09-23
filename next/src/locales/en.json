@@ -40,7 +40,6 @@
     "invalid_answer": "Invalid answer",
     "email_registration_confirmation_subject": "Confirmation of event registration",
     "invalid_credentials": "Invalid credentials",
-    "legacy_account_migrated": "Your old Biopsi account has been linked to your new account, and you now have a member role!",
     "invalid_answer_time": "You cannot change your answers any more. If you need to make changes, please contact the event organizer.",
     "user_not_found": "User not found",
     "user_updated": "User updated. Some changes require the user to re-login to take effect.",
@@ -234,8 +233,7 @@
     "job_opportunities": "Job opportunities",
     "profile": "Profile",
     "own_events": "My events",
-    "admin": "Admin",
-    "migrate_account": "Migrate account"
+    "admin": "Admin"
   },
   "pages_home": {
     "hero": {
@@ -447,8 +445,6 @@
     "declare_address": "I'm declaring address according to section 4 of Biopsi's rules for the period",
     "address_declarated_info": "Your address declaration is valid",
     "address_not_declared": "You have not made an address declaration for the period",
-    "legacy_migrate_info": "You can link your old website's Biopsi account using this form. Enter your old website email and password in the fields below and press 'Submit'. Please note that your profile needs to fulfill requirements set in Assocations Act Paragraph 11 on the current website.",
-    "migrate_account": "Migrate account",
     "missing_required_fields": "You are a member of Biopsi, but you are missing some required information. Please provide the missing details. Required fields are marked with an asterisk.",
     "email_subscription": "Email subscription"
   },
