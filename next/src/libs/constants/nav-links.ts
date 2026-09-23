@@ -35,10 +35,6 @@ export const navLinksDesktop: NavLink[] = [
         href: '/organization/meeting-minutes',
       },
       {
-        translation: 'office_hervanta',
-        href: '/organization/office-hervanta',
-      },
-      {
         translation: 'office',
         href: '/organization/office',
       },
@@ -125,10 +121,6 @@ export const navLinksDesktop: NavLink[] = [
       {
         translation: 'sanomat',
         href: '/biopsi-sanomat',
-      },
-      {
-        translation: 'gallery',
-        href: 'https://luuppiry.kuvat.fi/kuvat/',
       },
     ],
   },
@@ -228,10 +220,6 @@ export const navLinksMobile: NavLink[] = [
         href: '/organization/meeting-minutes',
       },
       {
-        translation: 'office_hervanta',
-        href: '/organization/office-hervanta',
-      },
-      {
         translation: 'office',
         href: '/organization/office',
       },
@@ -301,11 +289,7 @@ export const navLinksMobile: NavLink[] = [
       {
         translation: 'sanomat',
         href: '/biopsi-sanomat',
-      },
-      {
-        translation: 'gallery',
-        href: 'https://luuppiry.kuvat.fi/kuvat/',
-      },
+      }
     ],
   },
   {

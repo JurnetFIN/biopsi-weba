@@ -1604,53 +1604,6 @@ export interface ApiOrganizationHonoraryMemberOrganizationHonoraryMember
   };
 }
 
-export interface ApiOrganizationOfficeHervantaOrganizationOfficeHervanta
-  extends Struct.SingleTypeSchema {
-  collectionName: 'organization_offices_hervanta';
-  info: {
-    description: '';
-    displayName: 'OrganizationOfficeHervanta';
-    pluralName: 'organization-offices-hervanta';
-    singularName: 'organization-office-hervanta';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Content: Schema.Attribute.Component<'shared.page-content', false> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::organization-office-hervanta.organization-office-hervanta'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiOrganizationOfficeOrganizationOffice
   extends Struct.SingleTypeSchema {
   collectionName: 'organization_offices';
@@ -2676,7 +2629,6 @@ declare module '@strapi/strapi' {
       'api::organization-document.organization-document': ApiOrganizationDocumentOrganizationDocument;
       'api::organization-general.organization-general': ApiOrganizationGeneralOrganizationGeneral;
       'api::organization-honorary-member.organization-honorary-member': ApiOrganizationHonoraryMemberOrganizationHonoraryMember;
-      'api::organization-office-hervanta.organization-office-hervanta': ApiOrganizationOfficeHervantaOrganizationOfficeHervanta;
       'api::organization-office.organization-office': ApiOrganizationOfficeOrganizationOffice;
       'api::organization-rule.organization-rule': ApiOrganizationRuleOrganizationRule;
       'api::organization-tradition-guideline.organization-tradition-guideline': ApiOrganizationTraditionGuidelineOrganizationTraditionGuideline;

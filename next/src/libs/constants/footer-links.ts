@@ -28,10 +28,6 @@ export const footerLinks: FooterLink[] = [
         href: '/organization/meeting-minutes',
       },
       {
-        translation: 'office_hervanta',
-        href: '/organization/office-hervanta',
-      },
-      {
         translation: 'office',
         href: '/organization/office',
       },
