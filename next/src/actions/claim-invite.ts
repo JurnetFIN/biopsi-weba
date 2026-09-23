@@ -50,7 +50,7 @@ export async function claimInvite(id: string, lang: string) {
   if (
     [
       process.env.NEXT_PUBLIC_NO_ROLE_ID!,
-      process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
+      //process.env.NEXT_PUBLIC_BIOPSI_MEMBER_ID!,
       process.env.NEXT_PUBLIC_BIOPSI_HATO_ID!,
     ].includes(role)
   ) {
