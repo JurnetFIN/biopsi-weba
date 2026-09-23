@@ -25,7 +25,7 @@ export default async function Home(props: HomeProps) {
   const params = await props.params;
   const dictionary = await getDictionary(params.lang);
 
-  ReactDOM.preload('/luuppi-cards.svg', { fetchPriority: 'high', as: 'image' });
+  ReactDOM.preload('/biopsi-cards.svg', { fetchPriority: 'high', as: 'image' });
 
   return (
     <>

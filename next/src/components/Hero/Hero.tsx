@@ -1,7 +1,7 @@
 'use client';
 import { Dictionary, SupportedLanguage } from '@/models/locale';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 interface HeroProps {
   dictionary: Dictionary;
@@ -10,6 +10,33 @@ interface HeroProps {
 
 export default function Hero({ dictionary, lang }: HeroProps) {
   const changingTextRef = useRef<HTMLSpanElement | null>(null);
+  const studyAreas = useMemo(
+    () => [
+      dictionary.pages_home.hero.bioinformatics,
+      dictionary.pages_home.hero.cell_technology,
+      dictionary.pages_home.hero.molecular_biology,
+    ],
+    [dictionary],
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const studyArea = changingTextRef.current;
+      if (studyArea) {
+        const currentText = studyArea.textContent;
+        const currentIndex = studyAreas.indexOf(currentText || '');
+        const nextIndex = (currentIndex + 1) % studyAreas.length;
+        studyArea.style.transform = 'translateY(-100%)';
+        studyArea.style.opacity = '0';
+        setTimeout(() => {
+          studyArea.textContent = studyAreas[nextIndex];
+          studyArea.style.transform = 'translateY(0)';
+          studyArea.style.opacity = '1';
+        }, 100);
+      }
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [studyAreas]);
 
   return (
     <section className="relative mx-auto flex max-w-[1200px] justify-center gap-8 px-4 pb-20 pt-28 max-2xl:overflow-hidden max-xl:flex-col max-xl:gap-20 max-md:pt-20">
@@ -21,7 +48,7 @@ export default function Hero({ dictionary, lang }: HeroProps) {
             className="inline-block bg-gradient-to-r from-secondary-400 to-text-300 bg-clip-text text-transparent transition-all duration-300 dark:from-secondary-700 dark:to-text-800"
             id="study-area"
           >
-            {dictionary.pages_home.hero.biotechnology}
+            {studyAreas[0]}
           </span>{' '}
           {dictionary.pages_home.hero.title_2}
         </h1>
@@ -41,7 +68,7 @@ export default function Hero({ dictionary, lang }: HeroProps) {
         <div className="luuppi-hero-cards flex h-full w-[100vw] items-center justify-center max-xl:max-w-[450px] max-md:max-w-[400px] max-sm:max-w-[380px]">
           <object
             className="h-full w-full"
-            data="/luuppi-cards.svg"
+            data="/biopsi-cards.svg"
             type="image/svg+xml"
           />
         </div>

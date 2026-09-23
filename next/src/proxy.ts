@@ -66,7 +66,7 @@ export async function proxy(request: NextRequest) {
       '/biopsi_banner_text_fi.svg',
       '/biopsi_banner_text_en.svg',
       '/kolmiot.svg',
-      '/luuppi-cards.svg',
+      '/biopsi-cards.svg',
       '/biopsi.svg',
     ].includes(pathname)
   ) {

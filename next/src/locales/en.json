@@ -239,10 +239,12 @@
   },
   "pages_home": {
     "hero": {
-      "biotechnology": "Biotechnology",
+      "bioinformatics": "bioinformatics",
+      "cell_technology": "cell technology",
+      "molecular_biology": "molecular biology",
       "title_1": "Biopsi ry, home for",
       "title_2": "students since 2001.",
-      "description": "Biopsi ry is the student organization for biotechnology students at the University of Tampere. Since 2001, Biopsi has been actively advocating for its members' interests and organizing leisure activities. It boasts the largest membership among student organizations at the University of Tampere!",
+      "description": "Biopsi ry is the student organization for bioinformatics, cell technology and molecular biology students at the University of Tampere. Since 2001, Biopsi has been actively advocating for its members' interests and organizing leisure activities. It boasts the largest membership among student organizations at the University of Tampere!",
       "read_more": "Read more"
     },
     "discover": {
