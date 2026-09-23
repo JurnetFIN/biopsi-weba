@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "luuppi_sanomats",
+  "collectionName": "biopsi_sanomats",
   "info": {
-    "singularName": "luuppi-sanomat",
-    "pluralName": "luuppi-sanomats",
-    "displayName": "LuuppiSanomat",
+    "singularName": "biopsi-sanomat",
+    "pluralName": "biopsi-sanomats",
+    "displayName": "BiopsiSanomat",
     "description": ""
   },
   "options": {

@@ -1072,14 +1072,14 @@ export interface ApiJobOpportunityJobOpportunity
   };
 }
 
-export interface ApiLuuppiSanomatLuuppiSanomat
+export interface ApiBiopsiSanomatBiopsiSanomat
   extends Struct.CollectionTypeSchema {
-  collectionName: 'luuppi_sanomats';
+  collectionName: 'biopsi_sanomats';
   info: {
     description: '';
-    displayName: 'LuuppiSanomat';
-    pluralName: 'luuppi-sanomats';
-    singularName: 'luuppi-sanomat';
+    displayName: 'BiopsiSanomat';
+    pluralName: 'biopsi-sanomats';
+    singularName: 'biopsi-sanomat';
   };
   options: {
     draftAndPublish: true;
@@ -1103,7 +1103,7 @@ export interface ApiLuuppiSanomatLuuppiSanomat
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::luuppi-sanomat.luuppi-sanomat'
+      'api::biopsi-sanomat.biopsi-sanomat'
     >;
     pdf: Schema.Attribute.Media<'files'> &
       Schema.Attribute.Required &
@@ -2664,7 +2664,7 @@ declare module '@strapi/strapi' {
       'api::events-calendar.events-calendar': ApiEventsCalendarEventsCalendar;
       'api::invite.invite': ApiInviteInvite;
       'api::job-opportunity.job-opportunity': ApiJobOpportunityJobOpportunity;
-      'api::luuppi-sanomat.luuppi-sanomat': ApiLuuppiSanomatLuuppiSanomat;
+      'api::biopsi-sanomat.biopsi-sanomat': ApiBiopsiSanomatBiopsiSanomat;
       'api::meeting-minute-document.meeting-minute-document': ApiMeetingMinuteDocumentMeetingMinuteDocument;
       'api::news-list.news-list': ApiNewsListNewsList;
       'api::news-single.news-single': ApiNewsSingleNewsSingle;

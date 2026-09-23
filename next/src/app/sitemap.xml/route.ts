@@ -51,7 +51,7 @@ const getStaticPages = (lang: SupportedLanguage) => {
     `/${lang}/news`,
 
     // Sanomat
-    `/${lang}/luuppi-sanomat`,
+    `/${lang}/biopsi-sanomat`,
 
     // Sports
     `/${lang}/sports`,
@@ -112,8 +112,8 @@ export async function GET() {
   >('fi', '/api/boards', ['board']);
 
   const luuppiSanomatData = await getStrapiData<
-    APIResponseCollection<'api::luuppi-sanomat.luuppi-sanomat'>
-  >('fi', '/api/luuppi-sanomats', ['luuppi-sanomat']);
+    APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
+  >('fi', '/api/biopsi-sanomats', ['biopsi-sanomat']);
 
   const weekAgo = new Date();
   weekAgo.setDate(weekAgo.getDate() - 7);
@@ -183,17 +183,17 @@ export async function GET() {
 
   const sanomatPages: SitemapItemLoose[] = luuppiSanomatData.data.map(
     (sanomat) => ({
-      url: `/fi/luuppi-sanomat/${sanomat.id}`,
+      url: `/fi/biopsi-sanomat/${sanomat.id}`,
       lastmod: new Date(sanomat.updatedAt!).toISOString(),
       links: [
         {
           hreflang: 'fi',
-          url: `/fi/luuppi-sanomat/${sanomat.id}`,
+          url: `/fi/biopsi-sanomat/${sanomat.id}`,
           lang: 'fi',
         },
         {
           hreflang: 'en',
-          url: `/en/luuppi-sanomat/${sanomat.id}`,
+          url: `/en/biopsi-sanomat/${sanomat.id}`,
           lang: 'en',
         },
       ],

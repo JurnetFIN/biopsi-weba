@@ -124,7 +124,7 @@ export const navLinksDesktop: NavLink[] = [
       },
       {
         translation: 'sanomat',
-        href: '/luuppi-sanomat',
+        href: '/biopsi-sanomat',
       },
       {
         translation: 'gallery',
@@ -300,7 +300,7 @@ export const navLinksMobile: NavLink[] = [
       },
       {
         translation: 'sanomat',
-        href: '/luuppi-sanomat',
+        href: '/biopsi-sanomat',
       },
       {
         translation: 'gallery',

@@ -11,27 +11,27 @@ import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 const baseUrl =
-  '/api/luuppi-sanomats?populate[0]=image&populate[1]=pdf&populate[2]=Seo.openGraph.openGraphImage&populate[3]=Seo.twitter.twitterImage&populate[4]=localizations&populate=localizations.Seo.twitter.twitterImage&populate=localizations.Seo.openGraph.openGraphImage&filters[publishedAt][$gte]=';
+  '/api/biopsi-sanomats?populate[0]=image&populate[1]=pdf&populate[2]=Seo.openGraph.openGraphImage&populate[3]=Seo.twitter.twitterImage&populate[4]=localizations&populate=localizations.Seo.twitter.twitterImage&populate=localizations.Seo.openGraph.openGraphImage&filters[publishedAt][$gte]=';
 
-interface LuuppiSanomatProps {
+interface BiopsiSanomatProps {
   params: Promise<{ slug: string; lang: SupportedLanguage }>;
 }
 
 export const instant = false;
 
-export default async function LuuppiSanomatPublication(
-  props: LuuppiSanomatProps,
+export default async function BiopsiSanomatPublication(
+  props: BiopsiSanomatProps,
 ) {
   const params = await props.params;
   const dictionary = await getDictionary(params.lang);
 
   // If two entries are published within same date this blows up (sorry)
   const pageData = await getStrapiData<
-    APIResponseCollection<'api::luuppi-sanomat.luuppi-sanomat'>
+    APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
   >(
     'fi',
     `${baseUrl}${params.slug}&filters[publishedAt][$lte]=${params.slug}T23:59:59.999Z`,
-    ['luuppi-sanomat'],
+    ['biopsi-sanomat'],
   );
 
   if (!pageData.data.length) {
@@ -67,15 +67,15 @@ export default async function LuuppiSanomatPublication(
 }
 
 export async function generateMetadata(
-  props: LuuppiSanomatProps,
+  props: BiopsiSanomatProps,
 ): Promise<Metadata> {
   const params = await props.params;
   const data = await getStrapiData<
-    APIResponseCollection<'api::luuppi-sanomat.luuppi-sanomat'>
-  >('fi', `${baseUrl}${params.slug}`, ['luuppi-sanomat']);
+    APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
+  >('fi', `${baseUrl}${params.slug}`, ['biopsi-sanomat']);
   const sanomatLocaleFlipped = flipSanomatLocale(params.lang, data.data);
   const selectedPublication = sanomatLocaleFlipped[0];
-  const pathname = `/${params.lang}/luuppi-sanomat/${params.slug}`;
+  const pathname = `/${params.lang}/biopsi-sanomat/${params.slug}`;
 
   // No version of the content exists in the requested language
   if (!selectedPublication?.Seo?.id) {
@@ -87,8 +87,8 @@ export async function generateMetadata(
 
 export async function generateStaticParams() {
   const pageData = await getStrapiData<
-    APIResponseCollection<'api::luuppi-sanomat.luuppi-sanomat'>
-  >('fi', '/api/luuppi-sanomats?pagination[pageSize]=500', ['luuppi-sanomat']);
+    APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
+  >('fi', '/api/biopsi-sanomats?pagination[pageSize]=500', ['biopsi-sanomat']);
 
   return pageData.data.map((sanomat) => ({
     slug: toCalendarDate(sanomat.publishedAt!),

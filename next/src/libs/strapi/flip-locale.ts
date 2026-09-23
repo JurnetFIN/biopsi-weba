@@ -72,7 +72,7 @@ export const flipNewsLocale = (
  */
 export const flipSanomatLocale = (
   lang: SupportedLanguage,
-  data: APIResponseData<'api::luuppi-sanomat.luuppi-sanomat'>[],
+  data: APIResponseData<'api::biopsi-sanomat.biopsi-sanomat'>[],
 ) =>
   lang === 'en'
     ? (
@@ -89,7 +89,7 @@ export const flipSanomatLocale = (
               ...localeEn?.Seo,
             },
           };
-        }) as APIResponseData<'api::luuppi-sanomat.luuppi-sanomat'>[]
+        }) as APIResponseData<'api::biopsi-sanomat.biopsi-sanomat'>[]
       )?.filter((publication) => publication)
     : data;
 

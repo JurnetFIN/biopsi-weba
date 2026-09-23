@@ -32,8 +32,8 @@ const nextConfig: NextConfig = {
       }))
       .concat(
         Object.entries(redirects.sanomats).map(([id, slug]) => ({
-          source: `/:lang*/luuppi-sanomat/${id}`,
-          destination: `/:lang*/luuppi-sanomat/${slug}`,
+          source: `/:lang*/biopsi-sanomat/${id}`,
+          destination: `/:lang*/biopsi-sanomat/${slug}`,
           permanent: true,
         })),
       ),

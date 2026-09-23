@@ -117,7 +117,7 @@ export const footerLinks: FooterLink[] = [
       },
       {
         translation: 'sanomat',
-        href: '/luuppi-sanomat',
+        href: '/biopsi-sanomat',
       },
       {
         translation: 'sports',

@@ -7,20 +7,20 @@ import { SupportedLanguage } from '@/models/locale';
 import { APIResponseCollection } from '@/types/types';
 import Image from 'next/image';
 
-interface LuuppiSanomatProps {
+interface BiopsiSanomatProps {
   params: Promise<{ lang: SupportedLanguage }>;
 }
 
-export default async function LuuppiSanomat(props: LuuppiSanomatProps) {
+export default async function BiopsiSanomat(props: BiopsiSanomatProps) {
   const params = await props.params;
   const dictionary = await getDictionary(params.lang);
 
   const pageData = await getStrapiData<
-    APIResponseCollection<'api::luuppi-sanomat.luuppi-sanomat'>
+    APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
   >(
     'fi',
-    '/api/luuppi-sanomats?populate[1]=image&pagination[pageSize]=500&sort[0]=publishedAt:desc',
-    ['luuppi-sanomat'],
+    '/api/biopsi-sanomats?populate[1]=image&pagination[pageSize]=500&sort[0]=publishedAt:desc',
+    ['biopsi-sanomat'],
   );
 
   const sortedData = pageData.data
@@ -44,7 +44,7 @@ export default async function LuuppiSanomat(props: LuuppiSanomatProps) {
           <a
             key={publication.documentId}
             className="group relative flex cursor-pointer flex-col gap-4 transition-transform duration-300 hover:scale-105"
-            href={`/${params.lang}/luuppi-sanomat/${toCalendarDate(publication.publishedAt!)}`}
+            href={`/${params.lang}/biopsi-sanomat/${toCalendarDate(publication.publishedAt!)}`}
           >
             {publication.image.url && (
               <div

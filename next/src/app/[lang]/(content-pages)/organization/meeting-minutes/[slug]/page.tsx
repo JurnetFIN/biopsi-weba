@@ -32,14 +32,14 @@ const query = qs.stringify(
 
 const baseUrl = `/api/meeting-minute-documents?${query}`;
 
-interface LuuppiSanomatProps {
+interface BiopsiSanomatProps {
   params: Promise<{ slug: string; lang: SupportedLanguage }>;
 }
 
 export const instant = false;
 
-export default async function LuuppiSanomatPublication(
-  props: LuuppiSanomatProps,
+export default async function BiopsiSanomatPublication(
+  props: BiopsiSanomatProps,
 ) {
   await connection();
 
@@ -113,7 +113,7 @@ export default async function LuuppiSanomatPublication(
 }
 
 export async function generateMetadata(
-  props: LuuppiSanomatProps,
+  props: BiopsiSanomatProps,
 ): Promise<Metadata> {
   const params = await props.params;
   const [year, shortMeetingName] = params.slug.split('-');
