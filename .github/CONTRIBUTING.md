@@ -1,14 +1,14 @@
-## Luuppi ry contributing guidelines
+## Biopsi ry contributing guidelines
 #### General guidelines for developers
 > [!IMPORTANT]
 > If you are a developer wanting to make any changes to the codebase, you should always open an issue first to initiate a discussion about whether the change is needed. This is especially important for larger features. After receiving confirmation that the change is indeed required, you can be sure that you are not wasting your time coding something that won't be merged.
 ### Did you find a bug?
-- **Do not open up a GitHub issue if the bug is a security vulnerability. Contact WWW/IT-team via email webmaster@luuppi.fi**.
-- **Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/luuppiry/luuppi-next/issues).**
-- If you are unable to find an open issue addressing the problem, [open a new one](https://github.com/luuppiry/luuppi-next/issues/new?assignees=&labels=type%3A+bug&projects=&template=bug_report.yaml). Please fill out the corresponding bug report template and answer all questions to the best of your knowledge.
+- **Do not open up a GitHub issue if the bug is a security vulnerability. Contact WWW/IT-team via email webmaster@biopsi.fi**.
+- **Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/biopsiry/biopsi-weba/issues).**
+- If you are unable to find an open issue addressing the problem, [open a new one](https://github.com/biopsiry/biopsi-weba/issues/new?assignees=&labels=type%3A+bug&projects=&template=bug_report.yaml). Please fill out the corresponding bug report template and answer all questions to the best of your knowledge.
 - The threshold for opening an issue is low. You can, and indeed should, open an issue even if you are unsure whether something constitutes a bug. There is no harm in doing that.
 ### Do you have a new feature in mind?
-- You can also open an issue regarding new features using the [feature template](https://github.com/luuppiry/luuppi-next/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature_request.yaml).
+- You can also open an issue regarding new features using the [feature template](https://github.com/biopsiry/biopsi-weba/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature_request.yaml).
 - Similarly to bug report cases, make sure there is no open issue regarding this feature request.
 
 ### Commit messages
@@ -40,4 +40,4 @@ By contributing, you agree that your contributions will be licensed under its MI
 
 #### Thanks to all contributors! 🔁 + ❤️ + 🫵
 
-Luuppi ry
+Biopsi ry
