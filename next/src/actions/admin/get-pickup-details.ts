@@ -19,7 +19,7 @@ export async function getPickupDetails(
   const session = await auth();
   const user = session?.user;
 
-  if (!user || !user.isLuuppiHato) {
+  if (!user || !user.isBiopsiHato) {
     logger.error('User not found in session or does not have required role');
     return {
       message: dictionary.api.unauthorized,

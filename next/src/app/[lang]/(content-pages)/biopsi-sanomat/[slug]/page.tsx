@@ -14,7 +14,7 @@ const baseUrl =
   '/api/biopsi-sanomats?populate[0]=image&populate[1]=pdf&populate[2]=Seo.openGraph.openGraphImage&populate[3]=Seo.twitter.twitterImage&populate[4]=localizations&populate=localizations.Seo.twitter.twitterImage&populate=localizations.Seo.openGraph.openGraphImage&filters[publishedAt][$gte]=';
 
 interface BiopsiSanomatProps {
-  params: Promise<{ slug: string; lang: SupportedLanguage }>;
+  params: Promise<{ slug: string }>;
 }
 
 export const instant = false;
@@ -33,6 +33,7 @@ export default async function BiopsiSanomatPublication(
     'fi',
     `${baseUrl}${params.slug}&filters[publishedAt][$lte]=${params.slug}T23:59:59.999Z`,
     ['biopsi-sanomat'],
+    true,
   );
 
   if (!pageData?.data.length) {
@@ -74,9 +75,10 @@ export async function generateMetadata(
   const data = await getStrapiData<
     APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
   >('fi', `${baseUrl}${params.slug}`, ['biopsi-sanomat']);
-  const sanomatLocaleFlipped = flipSanomatLocale(params.lang, data.data);
+  const lang = await language();
+  const sanomatLocaleFlipped = flipSanomatLocale(lang, data.data);
   const selectedPublication = sanomatLocaleFlipped[0];
-  const pathname = `/${params.lang}/biopsi-sanomat/${params.slug}`;
+  const pathname = `/${lang}/biopsi-sanomat/${params.slug}`;
 
   // No version of the content exists in the requested language
   if (!selectedPublication?.Seo?.id) {

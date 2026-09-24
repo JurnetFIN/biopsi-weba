@@ -5,14 +5,11 @@ import { getStrapiUrl } from '@/libs/strapi/get-strapi-url';
 import { firstLetterToUpperCase } from '@/libs/utils/first-letter-uppercase';
 import { APIResponseCollection } from '@/types/types';
 import Image from 'next/image';
+import { lang as language } from 'next/root-params';
 
-interface BiopsiSanomatProps {
-  params: Promise<{ lang: SupportedLanguage }>;
-}
-
-export default async function BiopsiSanomat(props: BiopsiSanomatProps) {
-  const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
+export default async function LuuppiSanomat() {
+  const lang = await language();
+  const dictionary = await getDictionary();
 
   const pageData = await getStrapiData<
     APIResponseCollection<'api::biopsi-sanomat.biopsi-sanomat'>
@@ -43,7 +40,7 @@ export default async function BiopsiSanomat(props: BiopsiSanomatProps) {
           <a
             key={publication.documentId}
             className="group relative flex cursor-pointer flex-col gap-4 transition-transform duration-300 hover:scale-105"
-            href={`/${params.lang}/biopsi-sanomat/${toCalendarDate(publication.publishedAt!)}`}
+            href={`/${lang}/luuppi-sanomat/${toCalendarDate(publication.publishedAt!)}`}
           >
             {publication.image.url && (
               <div
