@@ -125,7 +125,7 @@ export async function userEditGeneral(
     },
   });
 
-  updateTag(`get-cached-user:${userToEditEntraUuid}`)
+  updateTag(`get-cached-user:${userToEditEntraUuid}`);
 
   return {
     message: dictionary.api.user_updated,

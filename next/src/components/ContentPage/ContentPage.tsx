@@ -1,25 +1,35 @@
+import { getDictionary } from '@/dictionaries';
 import { dateFormat } from '@/libs/constants';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
 import { getStrapiUrl } from '@/libs/strapi/get-strapi-url';
-import { Dictionary, SupportedLanguage } from '@/models/locale';
-import { APIResponseCollection } from '@/types/types';
+import { APIResponseCollection, StrapiCacheTag } from '@/types/types';
+import { cacheLife, cacheTag } from 'next/cache';
 import Image from 'next/image';
 import Link from 'next/link';
+import { lang as language } from 'next/root-params';
 import BlockRendererClient from '../BlockRendererClient/BlockRendererClient';
 import SideNavigator from '../SideNavigator/SideNavigator';
 import SidePartners from '../SidePartners/SidePartners';
 
 interface ContentPageProps {
-  contentData: any;
-  dictionary: Dictionary;
-  lang: SupportedLanguage;
+  fetchTags: StrapiCacheTag[];
+  url: string;
 }
 
 export default async function ContentPage({
-  contentData,
-  dictionary,
-  lang,
+  fetchTags,
+  url,
 }: ContentPageProps) {
+  'use cache';
+  cacheLife('max');
+  cacheTag(...fetchTags);
+
+  const lang = await language();
+  const dictionary = await getDictionary();
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { data: contentData } = await getStrapiData<any>(lang, url, fetchTags);
+
   const partnersData = await getStrapiData<
     APIResponseCollection<'api::company.company'>
   >(lang, '/api/companies?populate=*', ['company']);

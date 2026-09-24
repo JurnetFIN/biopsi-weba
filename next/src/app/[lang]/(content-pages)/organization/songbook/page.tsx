@@ -1,15 +1,9 @@
 import Songbook from '@/components/Songbook/Songbook';
 import { getDictionary } from '@/dictionaries';
-import { SupportedLanguage } from '@/models/locale';
 import { Metadata } from 'next';
 
-interface SongbookProps {
-  params: Promise<{ lang: SupportedLanguage }>;
-}
-
-export default async function SongbookPage(props: SongbookProps) {
-  const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
+export default async function SongbookPage() {
+  const dictionary = await getDictionary();
 
   return (
     <div className="relative">
@@ -23,11 +17,8 @@ export default async function SongbookPage(props: SongbookProps) {
   );
 }
 
-export async function generateMetadata(
-  props: SongbookProps,
-): Promise<Metadata> {
-  const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary();
   return {
     title: dictionary.pages_songbook.seo_title,
     description: dictionary.pages_songbook.seo_description,

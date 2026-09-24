@@ -21,21 +21,6 @@ export async function reservationChargeAll(lang: SupportedLanguage) {
     };
   }
 
-  const localUser = await prisma.user.findUnique({
-    where: { entraUserUuid: session.user.entraUserUuid },
-  });
-
-  // Not valid user under Associations Act Section 11.
-  // This is enforced for everyone regardless of member status for administrative purposes.
-  if (
-    !localUser ||
-    !localUser.firstName ||
-    !localUser.lastName ||
-    !localUser.domicle
-  ) {
-    return { message: dictionary.api.invalid_user, isError: true };
-  }
-
   const registrations = await prisma.eventRegistration.findMany({
     where: {
       entraUserUuid: session.user.entraUserUuid,
@@ -140,7 +125,7 @@ export async function reservationChargeAll(lang: SupportedLanguage) {
     updateTag(`get-cached-user:${session.user.entraUserUuid}`);
     for (const reg of registrations) {
       updateTag(`get-cached-event-participants:${reg.eventDocumentId}`);
-      updateTag(`get-cached-event-registrations:${reg.eventDocumentId}`)
+      updateTag(`get-cached-event-registrations:${reg.eventDocumentId}`);
     }
     revalidatePath('/[lang]/events/[slug]', 'page');
   } catch (error) {

@@ -3,7 +3,6 @@ import { toCalendarDate } from '@/libs/constants';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
 import { getStrapiUrl } from '@/libs/strapi/get-strapi-url';
 import { firstLetterToUpperCase } from '@/libs/utils/first-letter-uppercase';
-import { SupportedLanguage } from '@/models/locale';
 import { APIResponseCollection } from '@/types/types';
 import Image from 'next/image';
 
@@ -64,7 +63,7 @@ export default async function BiopsiSanomat(props: BiopsiSanomatProps) {
               {firstLetterToUpperCase(
                 new Date(
                   publication?.publishedAt || publication.createdAt!,
-                ).toLocaleDateString(params.lang, {
+                ).toLocaleDateString(lang, {
                   month: 'short',
                   year: 'numeric',
                 }),
