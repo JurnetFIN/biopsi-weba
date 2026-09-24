@@ -1,12 +1,12 @@
-<img src="./.github/weba_banner.png" alt="Luuppi ry web repository banner">
+<img src="./next/public/images/event_placeholder.png" alt="Biopsi ry web repository banner" height=300px>
 
-# [Luuppi ry - Weba](https://luuppi.fi)
+# [Biopsi ry - Weba](https://biopsi.fi)
 
-[Luuppi ry](https://luuppi.fi) is the subject association for students studying mathematics, statistical data analysis, and computer science at Tampere University. Since 1969, Luuppi has been actively promoting the interests of its members and organizing a variety of free-time activities. It proudly holds the distinction of being the largest subject association at the [University of Tampere](https://www.tuni.fi/en)!
+[Biopsi ry](https://biopsi.fi) is the student association of [University of Tampere](https://www.tuni.fi/en) Biotechnology students. We take care of the rights of our students, organize events for our members and most importantly, bring together the biotechnology students of Tampere! We study at the campus of Kauppi, where our clubroom called “Kerhis” is also located. At events, you can recognize us from our purple overalls!
 
 ## About this Repository
 
-This repository is the foundation of [luuppi.fi](https://luuppi.fi) website. It contains two main components: a Content Management System (CMS) powered by [Strapi](https://strapi.io/), and the website's frontend built using [Next.js](https://nextjs.org/). This project is led by Luuppi's **WWW / IT representatives**, who are elected annually through a voting process. If you have any questions about the repository, you can contact the team at **webmaster@luuppi.fi**.
+This repository is the foundation of [biopsi.fi](https://biopsi.fi) website. It contains two main components: a Content Management System (CMS) powered by [Strapi](https://strapi.io/), and the website's frontend built using [Next.js](https://nextjs.org/). This project is led by Biopsi's **WWW / IT representatives**, who are elected annually through a voting process. This repository was forked from the website repository of our friend guild, courtesy of [Luuppi ry](https://luuppi.fi). Huge thanks to their WWW/IT representatives for huge amount of work that went into building their website. If you have any questions about the repository, you can contact the team at **webmaster@biopsi.fi**.
 
 ## Development setup
 
@@ -134,42 +134,6 @@ Trying to report a possible security vulnerability in this repository? Please
 check out our [Security Policy](.github/SECURITY.md) for
 guidelines about how to proceed.
 
-## Contributors ♥️ Thanks
-
-We extend our gratitude to all those who take the time to improve Luuppi's website. The main goal of this project being open-source is to enable everyone to be part of it and, most importantly, to learn from a "real project" with a very low threshold.
-
-<a href="https://github.com/luuppiry/luuppi-next/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=luuppiry/luuppi-next&max=400&columns=20" />
-</a>
-
-### Open Discussion
-
-We have public [Telegram-channel](https://t.me/luupinweba) for people interested about Luuppi's web development :)
-
-<a href="https://t.me/luupinweba">
-  <img src="./.github/tunkkailu_banner.png" alt="Luuppi ry web repository banner">
-</a>
-
 ## License
 
 This repository is released under the [MIT License](https://opensource.org/licenses/MIT).
-
-<details>
-
-<summary>Bonus</summary>
-
-# Time lost graveyard 🪦
-
-_Beginning of time starts from January 1, 1970, 00:00:00 UTC_
-
-Feel free to bring your meter here:
-
-#### Kasperi Pohtinen
-
-[![wakatime](https://wakatime.com/badge/user/a04247ba-6c76-456e-b04a-3dfa0bc6df41/project/018d2279-a88c-4764-afbe-c443f3ae9726.svg)](https://wakatime.com/badge/user/a04247ba-6c76-456e-b04a-3dfa0bc6df41/project/018d2279-a88c-4764-afbe-c443f3ae9726)
-
-#### Juliusz Kotelba
-
-[![wakatime](https://wakatime.com/badge/user/c8b15fbf-a210-457e-9da7-a0093d788004/project/7228ff6c-cafc-4c5f-b019-e1ef70fabea4.svg)](https://wakatime.com/badge/user/c8b15fbf-a210-457e-9da7-a0093d788004/project/7228ff6c-cafc-4c5f-b019-e1ef70fabea4)
-
-</details>
