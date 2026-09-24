@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import NotificationBar from '@/components/NotificationBar/NotificationBar';
+import UserProfileNotice from '@/components/UserProfileNotice/UserProfileNotice';
 import { getDictionary } from '@/dictionaries';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
 import EventSelectorProvider from '@/providers/EventSelectorProvider';
@@ -11,6 +12,7 @@ import { SessionProvider } from 'next-auth/react';
 import PlausibleProvider from 'next-plausible';
 import { Poppins } from 'next/font/google';
 import { lang as language } from 'next/root-params';
+import { Suspense } from 'react';
 import { i18n } from '../../i18n-config';
 import './globals.css';
 
@@ -80,6 +82,9 @@ export default async function RootLayout(props: RootLayoutProps) {
         <SessionProvider>
           <ThemeProvider>
             <Header dictionary={dictionary} lang={lang} />
+            <Suspense fallback={null}>
+              <UserProfileNotice dictionary={dictionary} lang={lang} />
+            </Suspense>
             <EventSelectorProvider>
               <div className="flex-1">{children}</div>
             </EventSelectorProvider>

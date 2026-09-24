@@ -20,6 +20,20 @@ export async function reservationChargeAll(lang: SupportedLanguage) {
       isError: true,
     };
   }
+  
+  const localUser = await prisma.user.findUnique({
+    where: { entraUserUuid: session.user.entraUserUuid },
+  });
+
+  // Missing profile information
+  if (
+    !localUser ||
+    !localUser.firstName ||
+    !localUser.lastName ||
+    !localUser.domicle
+  ) {
+    return { message: dictionary.api.invalid_user, isError: true };
+  }
 
   const registrations = await prisma.eventRegistration.findMany({
     where: {
