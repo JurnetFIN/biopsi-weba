@@ -14,7 +14,6 @@ export default function CloseableLink({
   lang,
   dictionary,
   isBiopsiHato,
-  isBiopsiMember,
 }: CloseableLinkProps) {
   const handleClick = () => {
     const elem = document.activeElement as HTMLElement;
