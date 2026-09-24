@@ -8,6 +8,7 @@ import { BiErrorCircle } from 'react-icons/bi';
 import { IoIosInformationCircleOutline } from 'react-icons/io';
 import { IoWarningOutline } from 'react-icons/io5';
 import Ticket from './Ticket';
+import { connection } from 'next/server';
 
 interface TicketAreaProps {
   lang: SupportedLanguage;
@@ -15,8 +16,10 @@ interface TicketAreaProps {
 }
 
 export default async function TicketArea({ lang, event }: TicketAreaProps) {
+  await connection();
+
   const session = await auth();
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary();
 
   const ticketTypes = event.data.Registration?.TicketTypes;
   const jointQuota = event.data.Registration?.JointQuota ?? false;

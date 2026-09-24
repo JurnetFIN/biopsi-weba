@@ -1,43 +1,24 @@
 import ContentPage from '@/components/ContentPage/ContentPage';
-import { getDictionary } from '@/dictionaries';
 import { formatMetadata } from '@/libs/strapi/format-metadata';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
-import { SupportedLanguage } from '@/models/locale';
-import { APIResponse } from '@/types/types';
+import { APIResponse, StrapiCacheTag } from '@/types/types';
 import { Metadata } from 'next';
+import { lang as language } from 'next/root-params';
 
 const url =
   '/api/studies-general?populate[0]=Content.banner&populate[1]=Seo.twitter.twitterImage&populate[2]=Seo.openGraph.openGraphImage';
-const tags = ['studies-general'] as const;
-
-interface StudiesProps {
-  params: Promise<{ lang: SupportedLanguage }>;
+const tags = ['studies-general'] as const satisfies StrapiCacheTag[];
+export default async function Studies() {
+  return <ContentPage fetchTags={tags} url={url} />;
 }
 
-export default async function Studies(props: StudiesProps) {
-  const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
-
-  const pageData = await getStrapiData<
-    APIResponse<'api::studies-general.studies-general'>
-  >(params.lang, url, tags);
-
-  return (
-    <ContentPage
-      contentData={pageData.data}
-      dictionary={dictionary}
-      lang={params.lang}
-    />
-  );
-}
-
-export async function generateMetadata(props: StudiesProps): Promise<Metadata> {
-  const params = await props.params;
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await language();
   const data = await getStrapiData<
     APIResponse<'api::studies-general.studies-general'>
-  >(params.lang, url, tags);
+  >(lang, url, tags);
 
-  const pathname = `/${params.lang}/studies`;
+  const pathname = `/${lang}/studies`;
 
   return formatMetadata(data, pathname);
 }

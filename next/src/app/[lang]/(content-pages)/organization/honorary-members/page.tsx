@@ -1,47 +1,27 @@
 import ContentPage from '@/components/ContentPage/ContentPage';
-import { getDictionary } from '@/dictionaries';
 import { formatMetadata } from '@/libs/strapi/format-metadata';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
-import { SupportedLanguage } from '@/models/locale';
-import { APIResponse } from '@/types/types';
+import { APIResponse, StrapiCacheTag } from '@/types/types';
 import { Metadata } from 'next';
+import { lang as language } from 'next/root-params';
 
 const url =
   '/api/organization-honorary-member?populate[0]=Content.banner&populate[1]=Seo.twitter.twitterImage&populate[2]=Seo.openGraph.openGraphImage';
-const tags = ['organization-honorary-member'] as const;
+const tags = [
+  'organization-honorary-member',
+] as const satisfies StrapiCacheTag[];
 
-interface OrganizationHonoraryMembersProps {
-  params: Promise<{ lang: SupportedLanguage }>;
+export default async function OrganizationHonoraryMembers() {
+  return <ContentPage fetchTags={tags} url={url} />;
 }
 
-export default async function OrganizationHonoraryMembers(
-  props: OrganizationHonoraryMembersProps,
-) {
-  const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
-
-  const pageData = await getStrapiData<
-    APIResponse<'api::organization-honorary-member.organization-honorary-member'>
-  >(params.lang, url, tags);
-
-  return (
-    <ContentPage
-      contentData={pageData.data}
-      dictionary={dictionary}
-      lang={params.lang}
-    />
-  );
-}
-
-export async function generateMetadata(
-  props: OrganizationHonoraryMembersProps,
-): Promise<Metadata> {
-  const params = await props.params;
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await language();
   const data = await getStrapiData<
     APIResponse<'api::organization-honorary-member.organization-honorary-member'>
-  >(params.lang, url, tags);
+  >(lang, url, tags);
 
-  const pathname = `/${params.lang}/organization/honorary-members`;
+  const pathname = `/${lang}/organization/honorary-members`;
 
   return formatMetadata(data, pathname);
 }

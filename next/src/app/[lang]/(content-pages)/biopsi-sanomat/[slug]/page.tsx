@@ -5,10 +5,10 @@ import { flipSanomatLocale } from '@/libs/strapi/flip-locale';
 import { formatMetadata } from '@/libs/strapi/format-metadata';
 import { getStrapiData } from '@/libs/strapi/get-strapi-data';
 import { getStrapiUrl } from '@/libs/strapi/get-strapi-url';
-import { SupportedLanguage } from '@/models/locale';
 import { APIResponseCollection } from '@/types/types';
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import { lang as language } from 'next/root-params';
 
 const baseUrl =
   '/api/biopsi-sanomats?populate[0]=image&populate[1]=pdf&populate[2]=Seo.openGraph.openGraphImage&populate[3]=Seo.twitter.twitterImage&populate[4]=localizations&populate=localizations.Seo.twitter.twitterImage&populate=localizations.Seo.openGraph.openGraphImage&filters[publishedAt][$gte]=';
@@ -22,8 +22,9 @@ export const instant = false;
 export default async function BiopsiSanomatPublication(
   props: BiopsiSanomatProps,
 ) {
+  const lang = await language();
   const params = await props.params;
-  const dictionary = await getDictionary(params.lang);
+  const dictionary = await getDictionary();
 
   // If two entries are published within same date this blows up (sorry)
   const pageData = await getStrapiData<
@@ -34,11 +35,11 @@ export default async function BiopsiSanomatPublication(
     ['biopsi-sanomat'],
   );
 
-  if (!pageData.data.length) {
-    redirect(`/${params.lang}/404`);
+  if (!pageData?.data.length) {
+    redirect(`/${lang}/404`);
   }
 
-  const sanomatLocaleFlipped = flipSanomatLocale(params.lang, pageData.data);
+  const sanomatLocaleFlipped = flipSanomatLocale(lang, pageData.data);
 
   const selectedPublication = sanomatLocaleFlipped[0];
 
@@ -49,7 +50,7 @@ export default async function BiopsiSanomatPublication(
         {new Date(
           selectedPublication?.publishedAt || selectedPublication.createdAt!,
         )
-          .toLocaleDateString(params.lang, {
+          .toLocaleDateString(lang, {
             month: 'short',
             year: 'numeric',
           })
