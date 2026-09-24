@@ -20,7 +20,7 @@ export async function reservationChargeAll(lang: SupportedLanguage) {
       isError: true,
     };
   }
-  
+
   const localUser = await prisma.user.findUnique({
     where: { entraUserUuid: session.user.entraUserUuid },
   });
